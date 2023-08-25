@@ -1,0 +1,16 @@
+D:\C#\Semana01\pjEmpresa\pjEmpresa\bin\Debug\net6.0-windows\pjEmpresa.exe
+D:\C#\Semana01\pjEmpresa\pjEmpresa\bin\Debug\net6.0-windows\pjEmpresa.deps.json
+D:\C#\Semana01\pjEmpresa\pjEmpresa\bin\Debug\net6.0-windows\pjEmpresa.runtimeconfig.json
+D:\C#\Semana01\pjEmpresa\pjEmpresa\bin\Debug\net6.0-windows\pjEmpresa.dll
+D:\C#\Semana01\pjEmpresa\pjEmpresa\bin\Debug\net6.0-windows\pjEmpresa.pdb
+D:\C#\Semana01\pjEmpresa\pjEmpresa\obj\Debug\net6.0-windows\pjEmpresa.Form1.resources
+D:\C#\Semana01\pjEmpresa\pjEmpresa\obj\Debug\net6.0-windows\pjEmpresa.csproj.GenerateResource.cache
+D:\C#\Semana01\pjEmpresa\pjEmpresa\obj\Debug\net6.0-windows\pjEmpresa.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\Semana01\pjEmpresa\pjEmpresa\obj\Debug\net6.0-windows\pjEmpresa.AssemblyInfoInputs.cache
+D:\C#\Semana01\pjEmpresa\pjEmpresa\obj\Debug\net6.0-windows\pjEmpresa.AssemblyInfo.cs
+D:\C#\Semana01\pjEmpresa\pjEmpresa\obj\Debug\net6.0-windows\pjEmpresa.csproj.CoreCompileInputs.cache
+D:\C#\Semana01\pjEmpresa\pjEmpresa\obj\Debug\net6.0-windows\pjEmpresa.dll
+D:\C#\Semana01\pjEmpresa\pjEmpresa\obj\Debug\net6.0-windows\refint\pjEmpresa.dll
+D:\C#\Semana01\pjEmpresa\pjEmpresa\obj\Debug\net6.0-windows\pjEmpresa.pdb
+D:\C#\Semana01\pjEmpresa\pjEmpresa\obj\Debug\net6.0-windows\pjEmpresa.genruntimeconfig.cache
+D:\C#\Semana01\pjEmpresa\pjEmpresa\obj\Debug\net6.0-windows\ref\pjEmpresa.dll
