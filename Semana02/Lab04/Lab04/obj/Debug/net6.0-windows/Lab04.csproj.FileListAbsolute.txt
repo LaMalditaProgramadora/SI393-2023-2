@@ -1,0 +1,16 @@
+D:\C#\Semana02\Lab04\Lab04\obj\Debug\net6.0-windows\Lab04.Form1.resources
+D:\C#\Semana02\Lab04\Lab04\obj\Debug\net6.0-windows\Lab04.csproj.GenerateResource.cache
+D:\C#\Semana02\Lab04\Lab04\obj\Debug\net6.0-windows\Lab04.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\Semana02\Lab04\Lab04\obj\Debug\net6.0-windows\Lab04.AssemblyInfoInputs.cache
+D:\C#\Semana02\Lab04\Lab04\obj\Debug\net6.0-windows\Lab04.AssemblyInfo.cs
+D:\C#\Semana02\Lab04\Lab04\obj\Debug\net6.0-windows\Lab04.csproj.CoreCompileInputs.cache
+D:\C#\Semana02\Lab04\Lab04\bin\Debug\net6.0-windows\Lab04.exe
+D:\C#\Semana02\Lab04\Lab04\bin\Debug\net6.0-windows\Lab04.deps.json
+D:\C#\Semana02\Lab04\Lab04\bin\Debug\net6.0-windows\Lab04.runtimeconfig.json
+D:\C#\Semana02\Lab04\Lab04\bin\Debug\net6.0-windows\Lab04.dll
+D:\C#\Semana02\Lab04\Lab04\bin\Debug\net6.0-windows\Lab04.pdb
+D:\C#\Semana02\Lab04\Lab04\obj\Debug\net6.0-windows\Lab04.dll
+D:\C#\Semana02\Lab04\Lab04\obj\Debug\net6.0-windows\refint\Lab04.dll
+D:\C#\Semana02\Lab04\Lab04\obj\Debug\net6.0-windows\Lab04.pdb
+D:\C#\Semana02\Lab04\Lab04\obj\Debug\net6.0-windows\Lab04.genruntimeconfig.cache
+D:\C#\Semana02\Lab04\Lab04\obj\Debug\net6.0-windows\ref\Lab04.dll
