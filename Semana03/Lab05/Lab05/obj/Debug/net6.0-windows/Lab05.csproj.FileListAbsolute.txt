@@ -1,0 +1,16 @@
+D:\C#\Semana03\Lab05\Lab05\bin\Debug\net6.0-windows\Lab05.exe
+D:\C#\Semana03\Lab05\Lab05\bin\Debug\net6.0-windows\Lab05.deps.json
+D:\C#\Semana03\Lab05\Lab05\bin\Debug\net6.0-windows\Lab05.runtimeconfig.json
+D:\C#\Semana03\Lab05\Lab05\bin\Debug\net6.0-windows\Lab05.dll
+D:\C#\Semana03\Lab05\Lab05\bin\Debug\net6.0-windows\Lab05.pdb
+D:\C#\Semana03\Lab05\Lab05\obj\Debug\net6.0-windows\Lab05.Form1.resources
+D:\C#\Semana03\Lab05\Lab05\obj\Debug\net6.0-windows\Lab05.csproj.GenerateResource.cache
+D:\C#\Semana03\Lab05\Lab05\obj\Debug\net6.0-windows\Lab05.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\Semana03\Lab05\Lab05\obj\Debug\net6.0-windows\Lab05.AssemblyInfoInputs.cache
+D:\C#\Semana03\Lab05\Lab05\obj\Debug\net6.0-windows\Lab05.AssemblyInfo.cs
+D:\C#\Semana03\Lab05\Lab05\obj\Debug\net6.0-windows\Lab05.csproj.CoreCompileInputs.cache
+D:\C#\Semana03\Lab05\Lab05\obj\Debug\net6.0-windows\Lab05.dll
+D:\C#\Semana03\Lab05\Lab05\obj\Debug\net6.0-windows\refint\Lab05.dll
+D:\C#\Semana03\Lab05\Lab05\obj\Debug\net6.0-windows\Lab05.pdb
+D:\C#\Semana03\Lab05\Lab05\obj\Debug\net6.0-windows\Lab05.genruntimeconfig.cache
+D:\C#\Semana03\Lab05\Lab05\obj\Debug\net6.0-windows\ref\Lab05.dll
