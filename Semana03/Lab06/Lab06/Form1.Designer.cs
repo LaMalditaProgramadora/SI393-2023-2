@@ -33,21 +33,6 @@
             label3 = new Label();
             tbAlbumCodigo = new TextBox();
             tbAlbumNombre = new TextBox();
-            panel1 = new Panel();
-            btnRegistrarAlbum = new Button();
-            btnLimpiarAlbum = new Button();
-            tbHeroeCaracteristicas = new TextBox();
-            tbHeroeCodigo = new TextBox();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            panel2 = new Panel();
-            bRegistrarHeroe = new Button();
-            tbHeroePoder = new TextBox();
-            label7 = new Label();
-            btnLimpiarHeroes = new Button();
-            tbHeroeNombre = new TextBox();
-            label8 = new Label();
             listViewAlbum = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
@@ -64,10 +49,25 @@
             panel4 = new Panel();
             lblHeroeMenorPoder = new Label();
             lblHeroeMayorPoder = new Label();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
+            label4 = new Label();
+            tbHeroeCodigo = new TextBox();
+            label5 = new Label();
+            tbHeroeCaracteristicas = new TextBox();
+            label8 = new Label();
+            tbHeroeNombre = new TextBox();
+            btnLimpiarHeroes = new Button();
+            label7 = new Label();
+            tbHeroePoder = new TextBox();
+            label6 = new Label();
+            btnRegistrarHeroe = new Button();
+            panel2 = new Panel();
+            btnLimpiarAlbum = new Button();
+            btnRegistrarAlbum = new Button();
+            panel1 = new Panel();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
+            panel2.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -111,147 +111,6 @@
             tbAlbumNombre.Name = "tbAlbumNombre";
             tbAlbumNombre.Size = new Size(154, 23);
             tbAlbumNombre.TabIndex = 4;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(btnRegistrarAlbum);
-            panel1.Controls.Add(btnLimpiarAlbum);
-            panel1.Location = new Point(12, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(256, 169);
-            panel1.TabIndex = 5;
-            // 
-            // btnRegistrarAlbum
-            // 
-            btnRegistrarAlbum.Location = new Point(53, 128);
-            btnRegistrarAlbum.Name = "btnRegistrarAlbum";
-            btnRegistrarAlbum.Size = new Size(75, 23);
-            btnRegistrarAlbum.TabIndex = 17;
-            btnRegistrarAlbum.Text = "Registrar";
-            btnRegistrarAlbum.UseVisualStyleBackColor = true;
-            btnRegistrarAlbum.Click += btnRegistrarAlbum_Click;
-            // 
-            // btnLimpiarAlbum
-            // 
-            btnLimpiarAlbum.Location = new Point(134, 128);
-            btnLimpiarAlbum.Name = "btnLimpiarAlbum";
-            btnLimpiarAlbum.Size = new Size(75, 23);
-            btnLimpiarAlbum.TabIndex = 15;
-            btnLimpiarAlbum.Text = "Limpiar";
-            btnLimpiarAlbum.UseVisualStyleBackColor = true;
-            btnLimpiarAlbum.Click += btnLimpiarAlbum_Click;
-            // 
-            // tbHeroeCaracteristicas
-            // 
-            tbHeroeCaracteristicas.Location = new Point(115, 83);
-            tbHeroeCaracteristicas.Name = "tbHeroeCaracteristicas";
-            tbHeroeCaracteristicas.Size = new Size(154, 23);
-            tbHeroeCaracteristicas.TabIndex = 10;
-            // 
-            // tbHeroeCodigo
-            // 
-            tbHeroeCodigo.Location = new Point(115, 48);
-            tbHeroeCodigo.Name = "tbHeroeCodigo";
-            tbHeroeCodigo.Size = new Size(154, 23);
-            tbHeroeCodigo.TabIndex = 9;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(23, 91);
-            label4.Name = "label4";
-            label4.Size = new Size(86, 15);
-            label4.TabIndex = 8;
-            label4.Text = "Características:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(60, 56);
-            label5.Name = "label5";
-            label5.Size = new Size(49, 15);
-            label5.TabIndex = 7;
-            label5.Text = "Código:";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(245, 16);
-            label6.Name = "label6";
-            label6.Size = new Size(45, 15);
-            label6.TabIndex = 6;
-            label6.Text = "HÉROE";
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(bRegistrarHeroe);
-            panel2.Controls.Add(label6);
-            panel2.Controls.Add(tbHeroePoder);
-            panel2.Controls.Add(label7);
-            panel2.Controls.Add(btnLimpiarHeroes);
-            panel2.Controls.Add(tbHeroeNombre);
-            panel2.Controls.Add(label8);
-            panel2.Controls.Add(tbHeroeCaracteristicas);
-            panel2.Controls.Add(label5);
-            panel2.Controls.Add(tbHeroeCodigo);
-            panel2.Controls.Add(label4);
-            panel2.Location = new Point(283, 12);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(529, 169);
-            panel2.TabIndex = 11;
-            // 
-            // bRegistrarHeroe
-            // 
-            bRegistrarHeroe.Location = new Point(185, 128);
-            bRegistrarHeroe.Name = "bRegistrarHeroe";
-            bRegistrarHeroe.Size = new Size(75, 23);
-            bRegistrarHeroe.TabIndex = 17;
-            bRegistrarHeroe.Text = "Registrar";
-            bRegistrarHeroe.UseVisualStyleBackColor = true;
-            bRegistrarHeroe.Click += bRegistrarHeroe_Click;
-            // 
-            // tbHeroePoder
-            // 
-            tbHeroePoder.Location = new Point(351, 83);
-            tbHeroePoder.Name = "tbHeroePoder";
-            tbHeroePoder.Size = new Size(154, 23);
-            tbHeroePoder.TabIndex = 14;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(291, 56);
-            label7.Name = "label7";
-            label7.Size = new Size(54, 15);
-            label7.TabIndex = 11;
-            label7.Text = "Nombre:";
-            // 
-            // btnLimpiarHeroes
-            // 
-            btnLimpiarHeroes.Location = new Point(266, 128);
-            btnLimpiarHeroes.Name = "btnLimpiarHeroes";
-            btnLimpiarHeroes.Size = new Size(75, 23);
-            btnLimpiarHeroes.TabIndex = 16;
-            btnLimpiarHeroes.Text = "Limpiar";
-            btnLimpiarHeroes.UseVisualStyleBackColor = true;
-            btnLimpiarHeroes.Click += btnLimpiarHeroes_Click;
-            // 
-            // tbHeroeNombre
-            // 
-            tbHeroeNombre.Location = new Point(351, 48);
-            tbHeroeNombre.Name = "tbHeroeNombre";
-            tbHeroeNombre.Size = new Size(154, 23);
-            tbHeroeNombre.TabIndex = 13;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(304, 91);
-            label8.Name = "label8";
-            label8.Size = new Size(41, 15);
-            label8.TabIndex = 12;
-            label8.Text = "Poder:";
             // 
             // listViewAlbum
             // 
@@ -343,7 +202,7 @@
             // lblAlbumMasHeroes
             // 
             lblAlbumMasHeroes.AutoSize = true;
-            lblAlbumMasHeroes.Location = new Point(22, 52);
+            lblAlbumMasHeroes.Location = new Point(17, 52);
             lblAlbumMasHeroes.Name = "lblAlbumMasHeroes";
             lblAlbumMasHeroes.Size = new Size(12, 15);
             lblAlbumMasHeroes.TabIndex = 21;
@@ -378,6 +237,147 @@
             lblHeroeMayorPoder.TabIndex = 19;
             lblHeroeMayorPoder.Text = "-";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(23, 91);
+            label4.Name = "label4";
+            label4.Size = new Size(86, 15);
+            label4.TabIndex = 8;
+            label4.Text = "Características:";
+            // 
+            // tbHeroeCodigo
+            // 
+            tbHeroeCodigo.Location = new Point(115, 48);
+            tbHeroeCodigo.Name = "tbHeroeCodigo";
+            tbHeroeCodigo.Size = new Size(154, 23);
+            tbHeroeCodigo.TabIndex = 9;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(60, 56);
+            label5.Name = "label5";
+            label5.Size = new Size(49, 15);
+            label5.TabIndex = 7;
+            label5.Text = "Código:";
+            // 
+            // tbHeroeCaracteristicas
+            // 
+            tbHeroeCaracteristicas.Location = new Point(115, 83);
+            tbHeroeCaracteristicas.Name = "tbHeroeCaracteristicas";
+            tbHeroeCaracteristicas.Size = new Size(154, 23);
+            tbHeroeCaracteristicas.TabIndex = 10;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(304, 91);
+            label8.Name = "label8";
+            label8.Size = new Size(41, 15);
+            label8.TabIndex = 12;
+            label8.Text = "Poder:";
+            // 
+            // tbHeroeNombre
+            // 
+            tbHeroeNombre.Location = new Point(351, 48);
+            tbHeroeNombre.Name = "tbHeroeNombre";
+            tbHeroeNombre.Size = new Size(154, 23);
+            tbHeroeNombre.TabIndex = 13;
+            // 
+            // btnLimpiarHeroes
+            // 
+            btnLimpiarHeroes.Location = new Point(266, 128);
+            btnLimpiarHeroes.Name = "btnLimpiarHeroes";
+            btnLimpiarHeroes.Size = new Size(75, 23);
+            btnLimpiarHeroes.TabIndex = 16;
+            btnLimpiarHeroes.Text = "Limpiar";
+            btnLimpiarHeroes.UseVisualStyleBackColor = true;
+            btnLimpiarHeroes.Click += btnLimpiarHeroes_Click;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(291, 56);
+            label7.Name = "label7";
+            label7.Size = new Size(54, 15);
+            label7.TabIndex = 11;
+            label7.Text = "Nombre:";
+            // 
+            // tbHeroePoder
+            // 
+            tbHeroePoder.Location = new Point(351, 83);
+            tbHeroePoder.Name = "tbHeroePoder";
+            tbHeroePoder.Size = new Size(154, 23);
+            tbHeroePoder.TabIndex = 14;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(245, 16);
+            label6.Name = "label6";
+            label6.Size = new Size(45, 15);
+            label6.TabIndex = 6;
+            label6.Text = "HÉROE";
+            // 
+            // btnRegistrarHeroe
+            // 
+            btnRegistrarHeroe.Location = new Point(185, 128);
+            btnRegistrarHeroe.Name = "btnRegistrarHeroe";
+            btnRegistrarHeroe.Size = new Size(75, 23);
+            btnRegistrarHeroe.TabIndex = 17;
+            btnRegistrarHeroe.Text = "Registrar";
+            btnRegistrarHeroe.UseVisualStyleBackColor = true;
+            btnRegistrarHeroe.Click += btnRegistrarHeroe_Click;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(btnRegistrarHeroe);
+            panel2.Controls.Add(label6);
+            panel2.Controls.Add(tbHeroePoder);
+            panel2.Controls.Add(label7);
+            panel2.Controls.Add(btnLimpiarHeroes);
+            panel2.Controls.Add(tbHeroeNombre);
+            panel2.Controls.Add(label8);
+            panel2.Controls.Add(tbHeroeCaracteristicas);
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(tbHeroeCodigo);
+            panel2.Controls.Add(label4);
+            panel2.Location = new Point(283, 12);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(529, 169);
+            panel2.TabIndex = 11;
+            // 
+            // btnLimpiarAlbum
+            // 
+            btnLimpiarAlbum.Location = new Point(134, 128);
+            btnLimpiarAlbum.Name = "btnLimpiarAlbum";
+            btnLimpiarAlbum.Size = new Size(75, 23);
+            btnLimpiarAlbum.TabIndex = 15;
+            btnLimpiarAlbum.Text = "Limpiar";
+            btnLimpiarAlbum.UseVisualStyleBackColor = true;
+            btnLimpiarAlbum.Click += btnLimpiarAlbum_Click;
+            // 
+            // btnRegistrarAlbum
+            // 
+            btnRegistrarAlbum.Location = new Point(53, 128);
+            btnRegistrarAlbum.Name = "btnRegistrarAlbum";
+            btnRegistrarAlbum.Size = new Size(75, 23);
+            btnRegistrarAlbum.TabIndex = 17;
+            btnRegistrarAlbum.Text = "Registrar";
+            btnRegistrarAlbum.UseVisualStyleBackColor = true;
+            btnRegistrarAlbum.Click += btnRegistrarAlbum_Click;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(btnRegistrarAlbum);
+            panel1.Controls.Add(btnLimpiarAlbum);
+            panel1.Location = new Point(12, 12);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(256, 169);
+            panel1.TabIndex = 5;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -396,13 +396,13 @@
             Controls.Add(panel4);
             Name = "Form1";
             Text = "Form1";
-            panel1.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -414,30 +414,15 @@
         private Label label3;
         private TextBox tbAlbumCodigo;
         private TextBox tbAlbumNombre;
-        private Panel panel1;
-        private TextBox tbHeroeCaracteristicas;
-        private TextBox tbHeroeCodigo;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private Panel panel2;
-        private TextBox tbHeroePoder;
-        private Label label7;
-        private TextBox tbHeroeNombre;
-        private Label label8;
         private ListView listViewAlbum;
         private ListView listViewHeroe;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
-        private Button btnRegistrarAlbum;
-        private Button bRegistrarHeroe;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
         private Label label10;
-        private Button btnLimpiarAlbum;
-        private Button btnLimpiarHeroes;
         private Label label11;
         private Label label12;
         private Panel panel3;
@@ -445,5 +430,20 @@
         private Panel panel4;
         private Label lblHeroeMenorPoder;
         private Label lblHeroeMayorPoder;
+        private Label label4;
+        private TextBox tbHeroeCodigo;
+        private Label label5;
+        private TextBox tbHeroeCaracteristicas;
+        private Label label8;
+        private TextBox tbHeroeNombre;
+        private Button btnLimpiarHeroes;
+        private Label label7;
+        private TextBox tbHeroePoder;
+        private Label label6;
+        private Button btnRegistrarHeroe;
+        private Panel panel2;
+        private Button btnLimpiarAlbum;
+        private Button btnRegistrarAlbum;
+        private Panel panel1;
     }
 }

@@ -19,8 +19,9 @@ namespace Lab06
             }
 
             // Obtener el álbum con más héroes
-            Album? albumMasHeroes = lista.MaxBy(element => element.Heroes.Count);
+            Album? albumMasHeroes = lista.MaxBy(elemento => elemento.Heroes.Count);
             if (albumMasHeroes != null) lblAlbumMasHeroes.Text = albumMasHeroes.Nombre;
+
         }
 
         private void MostrarHeroes(List<Heroe> lista)
@@ -35,29 +36,31 @@ namespace Lab06
                 listViewHeroe.Items.Add(fila);
             }
 
-            // Obtener el héroes con mayor y menos poder
-            Heroe? heroeMayorPoder = lista.MaxBy(element => element.Poder);
-            Heroe? heroeMenorPoder = lista.MaxBy(element => element.Poder);
+            // Héroe con mayor y menos poder
+            Heroe? heroeMayorPoder = lista.MaxBy(elemento => elemento.Poder);
+            Heroe? heroeMenorPoder = lista.MinBy(elemento => elemento.Poder);
             if (heroeMayorPoder != null) lblHeroeMayorPoder.Text = heroeMayorPoder.Nombre;
             if (heroeMenorPoder != null) lblHeroeMenorPoder.Text = heroeMenorPoder.Nombre;
         }
 
         private void btnRegistrarAlbum_Click(object sender, EventArgs e)
         {
-            // Validar
+            // Validación
             if (tbAlbumCodigo.Text == "" || tbAlbumNombre.Text == "")
             {
                 MessageBox.Show("Ingrese todos los campos del álbum");
                 return;
             }
-            bool exist = albumes.Exists(element => element.Codigo.Equals(tbAlbumCodigo.Text));
-            if (exist)
+
+            // Verificación de código
+            bool existe = albumes.Exists(elemento => elemento.Codigo.Equals(tbAlbumCodigo.Text));
+            if (existe)
             {
-                MessageBox.Show("Código ya registrado");
+                MessageBox.Show("Código ya existe");
                 return;
             }
 
-            // Crear objeto
+            // Creando el objeto
             Album album = new()
             {
                 Codigo = tbAlbumCodigo.Text,
@@ -65,42 +68,47 @@ namespace Lab06
                 Heroes = new()
             };
 
-            // Agregar al listado de albumes
+            // Agregar el álbum a la lista
             albumes.Add(album);
 
-            // Mostrar en el ListView y ComboBox
+            // Mostrar en el ListView
             MostrarAlbumes(albumes);
         }
 
-        private void bRegistrarHeroe_Click(object sender, EventArgs e)
+        private void btnLimpiarAlbum_Click(object sender, EventArgs e)
         {
-            // Validar
+            MostrarAlbumes(albumes);
+        }
+
+        private void btnRegistrarHeroe_Click(object sender, EventArgs e)
+        {
+            // Validación
             bool seleccionado = listViewAlbum.SelectedItems.Count != 0;
+
             if (!seleccionado || tbHeroeCodigo.Text == "" || tbHeroeNombre.Text == "" ||
                 tbHeroeCaracteristicas.Text == "" || tbHeroePoder.Text == "")
             {
-                MessageBox.Show("Ingrese todos los campos del héroe");
+                MessageBox.Show("Ingrese todos los campos del álbum");
                 return;
             }
 
-            // Hallamos el álbum seleccionado
-            Album? albumSeleccionado =
-                albumes.Find(element => element.Codigo.Equals(listViewAlbum.SelectedItems[0].Text));
-            if (albumSeleccionado == null)
-            {
-                return;
-            }
+            // Encontrar el álbum seleccionado
+            String codigo = listViewAlbum.SelectedItems[0].Text;
+            Album? albumSeleccionado = albumes.Find(elemento => elemento.Codigo.Equals(codigo));
+            if (albumSeleccionado == null) return;
 
             // Hallamos la lista de héroes del álbum
             List<Heroe> heroes = albumSeleccionado.Heroes;
-            bool exist = heroes.Exists(element => element.Codigo.Equals(tbHeroeCodigo.Text));
-            if (exist)
+
+            // Verificación de código
+            bool existe = heroes.Exists(elemento => elemento.Codigo.Equals(tbHeroeCodigo.Text));
+            if (existe)
             {
-                MessageBox.Show("Código ya registrado");
+                MessageBox.Show("Código ya existe");
                 return;
             }
 
-            // Crear objeto
+            // Crear el objeto
             Heroe heroe = new()
             {
                 Codigo = tbHeroeCodigo.Text,
@@ -109,16 +117,26 @@ namespace Lab06
                 Poder = double.Parse(tbHeroePoder.Text)
             };
 
-            // Agregar al listado de héroes del álbum
+            // Agregar el objeto a la lista de héroes del album
             albumSeleccionado.Heroes.Add(heroe);
 
             // Mostrar en el ListView
-            MostrarHeroes(heroes);
+            MostrarHeroes(albumSeleccionado.Heroes);
         }
 
-        private void btnLimpiarAlbum_Click(object sender, EventArgs e)
+        private void listViewAlbum_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MostrarAlbumes(albumes);
+            // Validación
+            bool seleccionado = listViewAlbum.SelectedItems.Count != 0;
+            if (!seleccionado) return;
+
+            // Hallar el álbum
+            String codigo = listViewAlbum.SelectedItems[0].Text;
+            Album? albumSeleccionado = albumes.Find(elemento => elemento.Codigo.Equals(codigo));
+            if (albumSeleccionado == null) return;
+
+            // Mostrar los héroes
+            MostrarHeroes(albumSeleccionado.Heroes);
         }
 
         private void btnLimpiarHeroes_Click(object sender, EventArgs e)
@@ -126,49 +144,23 @@ namespace Lab06
             MostrarHeroes(new List<Heroe>());
         }
 
-        private void listViewAlbum_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Validar que esté seleccionado
-            bool seleccionado = listViewAlbum.SelectedItems.Count != 0;
-            if (!seleccionado)
-            {
-                return;
-            }
-
-            // Hallamos el álbum seleccionado
-            Album? albumSeleccionado =
-                albumes.Find(element => element.Codigo.Equals(listViewAlbum.SelectedItems[0].Text));
-            if (albumSeleccionado == null)
-            {
-                return;
-            }
-
-            // Mostramos sus héroes
-            MostrarHeroes(albumSeleccionado.Heroes);
-        }
-
         private void listViewHeroe_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Validar que esté seleccionado
+            // Validación
             bool seleccionado = listViewHeroe.SelectedItems.Count != 0;
-            if (!seleccionado)
-            {
-                return;
-            }
+            if (!seleccionado) return;
 
-            // Hallamos el código del héroe seleccionado
+            // Hallar el código del héroe
             String codigo = listViewHeroe.SelectedItems[0].Text;
 
-            // Buscamos si los álbumes contienen un héroe con ese código
-            // Y Almacenamos en un temporal
+            // Buscar los álbumes que tengan el héroe con ese código
             List<Album> albumesTemp = new();
-            foreach (Album album in albumes)
-            {
-                bool exist = album.Heroes.Exists(elemento => elemento.Codigo.Equals(codigo));
-                if (exist) albumesTemp.Add(album);
+            foreach (Album album in albumes) {
+                bool existe = album.Heroes.Exists(elemento => elemento.Codigo.Equals(codigo));
+                if (existe) albumesTemp.Add(album);
             }
 
-            // Mostramos sus álbumes
+            // Mostrar álbumes
             MostrarAlbumes(albumesTemp);
         }
     }
