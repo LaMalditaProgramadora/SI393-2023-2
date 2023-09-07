@@ -12,7 +12,6 @@ namespace Lab07
         public String Codigo { get; set; }
         public String Nombre { get; set; }
         public String Dni { get; set; }
-        public String Telefono { get; set; }
         public int Edad { get; set; }
     }
 }
