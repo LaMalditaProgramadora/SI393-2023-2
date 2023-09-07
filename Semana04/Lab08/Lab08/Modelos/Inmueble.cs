@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab08.Models
+namespace Lab08.Modelos
 {
     internal class Inmueble
     {

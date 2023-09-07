@@ -1,14 +1,4 @@
-锘縰sing Lab08.Modelos;
-using Lab08.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using Lab08.Modelos;
 
 namespace Lab08
 {
@@ -56,7 +46,7 @@ namespace Lab08
 
         private void btnAgregarAgencia_Click(object sender, EventArgs e)
         {
-            // Validaci贸n de campos
+            // Validaci髇 de campos
             if (tbAgenciaCodigo.Text == "" || tbAgenciaDireccion.Text == "" ||
                 tbAgenciaCiudad.Text == "" || tbAgenciaTelefono.Text == "")
             {
@@ -64,11 +54,11 @@ namespace Lab08
                 return;
             }
 
-            // Validaci贸n de c贸digo
+            // Validaci髇 de c骴igo
             bool existe = agencias.Exists(a => a.Codigo.Equals(tbAgenciaCodigo.Text));
             if (existe)
             {
-                MessageBox.Show("El c贸digo ya existe");
+                MessageBox.Show("El c骴igo ya existe");
                 return;
             }
 
@@ -89,16 +79,22 @@ namespace Lab08
             MostrarAgencias(agencias);
         }
 
+        private void btnLimpiarAgencia_Click(object sender, EventArgs e)
+        {
+            // Mostrar en el ListView
+            MostrarAgencias(agencias);
+        }
+
         private void btnAgregarInmueble_Click(object sender, EventArgs e)
         {
-            // Validaci贸n de agencia seleccionada
+            // Validaci髇 de agencia seleccionada
             if (listViewAgencias.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Seleccione una agencia");
                 return;
             }
 
-            // Validaci贸n de campos
+            // Validaci髇 de campos
             if (tbInmuebleCodigo.Text == "" || tbInmuebleDireccion.Text == "" ||
                 tbInmuebleSuperficie.Text == "" || tbInmueblePrecio.Text == "" ||
                 cbInmuebleCondicion.Text == "")
@@ -107,14 +103,14 @@ namespace Lab08
                 return;
             }
 
-            // Validaci贸n de c贸digo
+            // Validaci髇 de c骴igo
             String codigo = tbInmuebleCodigo.Text;
             foreach (Agencia agencia in agencias)
             {
                 bool existe = agencia.Inmuebles.Exists(i => i.Codigo.Equals(codigo));
                 if (existe)
                 {
-                    MessageBox.Show("El c贸digo ya existe");
+                    MessageBox.Show("El c骴igo ya existe");
                     return;
                 }
             }
@@ -123,29 +119,36 @@ namespace Lab08
             String codigoAgencia = listViewAgencias.SelectedItems[0].Text;
             Agencia? agenciaSelec = agencias.Find(a => a.Codigo.Equals(codigoAgencia));
 
-            // Crear el objeto
-            Inmueble inmueble = new()
-            {
-                Codigo = tbInmuebleCodigo.Text,
-                Direccion = tbInmuebleDireccion.Text,
-                Superficie = double.Parse(tbInmuebleSuperficie.Text),
-                Precio = double.Parse(tbInmueblePrecio.Text),
-                Condicion = cbInmuebleCondicion.Text
-            };
-
             if (agenciaSelec != null)
             {
-                // Agregar a la lista
+                // Crear el objeto
+                Inmueble inmueble = new()
+                {
+                    Codigo = tbInmuebleCodigo.Text,
+                    Direccion = tbInmuebleDireccion.Text,
+                    Superficie = double.Parse(tbInmuebleSuperficie.Text),
+                    Precio = double.Parse(tbInmueblePrecio.Text),
+                    Condicion = cbInmuebleCondicion.Text
+                };
+
+                // Agregar a lista
                 agenciaSelec.Inmuebles.Add(inmueble);
 
                 // Mostrar en el ListView
                 MostrarInmuebles(agenciaSelec.Inmuebles);
             }
+
+        }
+
+        private void btnLimpiarInmueble_Click(object sender, EventArgs e)
+        {
+            // Mostrar en el ListView
+            MostrarInmuebles(new List<Inmueble>());
         }
 
         private void listViewAgencias_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Validaci贸n de agencia seleccionada
+            // Validaci髇 de agencia seleccionada
             if (listViewAgencias.SelectedItems.Count == 0)
             {
                 return;
@@ -153,12 +156,12 @@ namespace Lab08
 
             // Buscamos la agencia seleccionada
             String codigoAgencia = listViewAgencias.SelectedItems[0].Text;
-            Agencia? agenciaSelec = agencias.Find(a => a.Codigo.Equals(codigoAgencia));
+            Agencia? agencia = agencias.Find(a => a.Codigo.Equals(codigoAgencia));
 
-            if (agenciaSelec != null)
+            if (agencia != null)
             {
                 // Mostrar en el ListView
-                MostrarInmuebles(agenciaSelec.Inmuebles);
+                MostrarInmuebles(agencia.Inmuebles);
             }
         }
 
@@ -215,10 +218,11 @@ namespace Lab08
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            // Validaci贸n de campos
+            // Validaci髇 de campos
             if (tbBuscar.Text == "")
             {
-                MessageBox.Show("Ingrese c贸digo de agencia");
+                MessageBox.Show("Ingrese c骴igo de agencia");
+                return;
             }
 
             // Buscamos la agencia seleccionada
@@ -232,16 +236,6 @@ namespace Lab08
                 // Mostrar en el ListView
                 MostrarInmuebles(inmueblesTemp);
             }
-        }
-
-        private void btnLimpiarAgencia_Click(object sender, EventArgs e)
-        {
-            MostrarAgencias(agencias);
-        }
-
-        private void btnLimpiarInmueble_Click(object sender, EventArgs e)
-        {
-            MostrarInmuebles(new List<Inmueble>());
         }
     }
 }

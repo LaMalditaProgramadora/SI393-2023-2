@@ -24,7 +24,9 @@ namespace Lab07
 
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
-            if (textBoxCodigo.Text == "" || textBoxNombre.Text == "")
+            // Validación de campos
+            if (textBoxCodigo.Text == "" || textBoxNombre.Text == "" ||
+                textBoxDni.Text == "" || textBoxEdad.Text == "")
             {
                 MessageBox.Show("Ingrese campos");
                 return;
@@ -38,12 +40,17 @@ namespace Lab07
                 Dni = textBoxDni.Text,
                 Edad = int.Parse(textBoxEdad.Text)
             };
+
+            // Agrega a la lista
             alumnos.Add(alumno);
+
+            // Mostrar en ListView
             Mostrar(alumnos);
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
+            // Validación de selección
             if (listViewAlumnos.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Seleccione alumno");
@@ -55,7 +62,9 @@ namespace Lab07
                 alumnos.RemoveAll(alumno => alumno.Codigo.Equals(item.Text));
             }
 
+            // Mostrar en ListView
             Mostrar(alumnos);
         }
+
     }
 }
