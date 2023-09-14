@@ -1,26 +1,16 @@
 ﻿using Lab09.entities;
 using Lab09.services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Lab09
 {
     public partial class FormPokemon : Form
     {
-        private PokemonService pokemonService = new();
-        private String codigoEntrenador;
+        private PokemonService pokemonService;
         public FormPokemon(String codigoEntrenador)
         {
             InitializeComponent();
-            this.codigoEntrenador = codigoEntrenador;
-            Mostrar(pokemonService.ListarPorEntrenador(codigoEntrenador));
+            pokemonService = new(codigoEntrenador);
+            Mostrar(pokemonService.ListarTodo());
         }
 
         private void Mostrar(List<Pokemon> lista)
@@ -63,7 +53,7 @@ namespace Lab09
             };
 
             // Insertar
-            bool insertado = pokemonService.Insertar(codigoEntrenador, pokemon);
+            bool insertado = pokemonService.Insertar(pokemon);
             if (!insertado)
             {
                 MessageBox.Show("El código ya existe");
@@ -71,7 +61,7 @@ namespace Lab09
             }
 
             // Actualizar ListView
-            Mostrar(pokemonService.ListarPorEntrenador(codigoEntrenador));
+            Mostrar(pokemonService.ListarTodo());
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

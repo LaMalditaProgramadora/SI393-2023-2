@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C#\\Semana04\\Lab09\\Lab09\\Lab09.csproj": {}
+    "D:\\C#\\Semana05\\Lab09\\Lab09\\Lab09.csproj": {}
   },
   "projects": {
-    "D:\\C#\\Semana04\\Lab09\\Lab09\\Lab09.csproj": {
+    "D:\\C#\\Semana05\\Lab09\\Lab09\\Lab09.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#\\Semana04\\Lab09\\Lab09\\Lab09.csproj",
+        "projectUniqueName": "D:\\C#\\Semana05\\Lab09\\Lab09\\Lab09.csproj",
         "projectName": "Lab09",
-        "projectPath": "D:\\C#\\Semana04\\Lab09\\Lab09\\Lab09.csproj",
+        "projectPath": "D:\\C#\\Semana05\\Lab09\\Lab09\\Lab09.csproj",
         "packagesPath": "C:\\Users\\Jimena\\.nuget\\packages\\",
-        "outputPath": "D:\\C#\\Semana04\\Lab09\\Lab09\\obj\\",
+        "outputPath": "D:\\C#\\Semana05\\Lab09\\Lab09\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jimena\\AppData\\Roaming\\NuGet\\NuGet.Config",

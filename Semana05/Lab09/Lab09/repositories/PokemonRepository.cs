@@ -22,7 +22,7 @@ namespace Lab09.repositories
             }
         }
 
-        public List<Pokemon> ListarPorEntrenador(String codigoEntrenador) {
+        public List<Pokemon> ListarTodo(String codigoEntrenador) {
             Entrenador? entrenadorEncontrado =
                     EntrenadorRepository.ListarTodo().Find(en => en.Codigo.Equals(codigoEntrenador));
             if (entrenadorEncontrado != null)

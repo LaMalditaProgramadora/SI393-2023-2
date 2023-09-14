@@ -11,13 +11,16 @@ namespace Lab09.services
     internal class PokemonService
     {
         private PokemonRepository pokemonRepository = new();
-        public PokemonService() { }
+        private String codigoEntrenador;
+        public PokemonService(String codigoEntrenador) {
+            this.codigoEntrenador = codigoEntrenador;
+        }
 
-        public bool Insertar(String codidoEntrenador, Pokemon pokemon)
+        public bool Insertar(Pokemon pokemon)
         {
             if (!pokemonRepository.Existe(pokemon.Codigo))
             {
-                pokemonRepository.Insertar(codidoEntrenador, pokemon);
+                pokemonRepository.Insertar(codigoEntrenador, pokemon);
                 return true;
             }
             else
@@ -26,9 +29,9 @@ namespace Lab09.services
             }
         }
 
-        public List<Pokemon> ListarPorEntrenador(String codigoEntrenador)
+        public List<Pokemon> ListarTodo()
         {
-            return pokemonRepository.ListarPorEntrenador(codigoEntrenador);
+            return pokemonRepository.ListarTodo(codigoEntrenador);
         }
     }
 }
