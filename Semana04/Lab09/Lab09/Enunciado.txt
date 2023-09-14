@@ -1,0 +1,27 @@
+Ejercicio MultiLists III
+
+Registro de información de la Liga Pokémon
+
+Se requiere una aplicación en C# para realizar el registro de la información de la Liga Pokémon. Por lo tanto, se solicita implementar los siguientes requisitos funcionales.
+
+* Registrar los datos de un entrenador. Un entrenador puede tener muchos pokémons (máximo 6).
+* Registrar los datos de un pokémon. Un pokémon debe estar asignado a un entrenador.
+* Listar los entrenadores.
+* Listar todos los pokémons de un entrenador.
+* Listar la cantidad total de puntos de salud de los pokémons de un entrenador.
+* Listar la información de los entrenadores que pertenecen a una determinada región.
+* Listar la información de los entrenadores que tienen un pokémon específico.
+* Listar la información de los entrenadores que tienen la menor cantidad de pokémons registrados.
+
+La información que se necesita es la siguiente:
+
+* Entrenador: Código, Nombre, Edad, Región.
+* Pokémon: Código, Nombre, Apodo, Tipo, Puntos de Salud, Es Legendario.
+
+Considere que las regiones pueden ser: Kanto, Johto, Hoenn, Sinnoh, Teselia/Unova, Kalos, Alola, Galar y Paldea.
+
+Considere que los Tipos de Pokémon pueden ser: Acero, Agua, Bicho, Dragón, Eléctrico, Fantasma, Fuego, Hada, Hielo, Lucha, Normal, Planta, Psíquico, Roca, Siniestro, Tierra, Veneno, Volador
+
+Tomar en cuenta lo siguiente:
+* El código del entrenador es único.
+* El código de pokémon es único.
