@@ -31,14 +31,7 @@ namespace Lab09.repositories
 
         public List<Entrenador> ListarPorRegion(String region)
         {
-            List<Entrenador> entrenadoresTemp = entrenadores.FindAll(en => en.Region.Equals(region));
-            if (entrenadoresTemp != null)
-            {
-                return entrenadoresTemp;
-            }
-            else {
-                return new List<Entrenador>();
-            }
+            return entrenadores.FindAll(en => en.Region.Equals(region));
         }
 
         public List<Entrenador> ListarPorNombrePokemon(String nombrePokemon)

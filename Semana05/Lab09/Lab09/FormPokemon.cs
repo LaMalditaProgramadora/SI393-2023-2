@@ -41,6 +41,12 @@ namespace Lab09
                 return;
             }
 
+            // Validar si tiene más de 6 pokémos
+            if (pokemonService.ListarTodo().Count == 6) {
+                MessageBox.Show("No se puede agregar más de 6 pokémons");
+                return;
+            }
+
             // Crear el objeto
             Pokemon pokemon = new()
             {

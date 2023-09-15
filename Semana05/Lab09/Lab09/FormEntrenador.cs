@@ -18,6 +18,7 @@ namespace Lab09
         public FormEntrenador()
         {
             InitializeComponent();
+            Mostrar(entrenadorService.ListarTodo());
         }
 
         private void Mostrar(List<Entrenador> lista)
