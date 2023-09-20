@@ -34,7 +34,7 @@
             // 
             // btnVerBuses
             // 
-            btnVerBuses.Location = new Point(73, 42);
+            btnVerBuses.Location = new Point(128, 35);
             btnVerBuses.Name = "btnVerBuses";
             btnVerBuses.Size = new Size(75, 23);
             btnVerBuses.TabIndex = 0;
@@ -44,7 +44,7 @@
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(73, 71);
+            btnSalir.Location = new Point(128, 64);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(75, 23);
             btnSalir.TabIndex = 1;
@@ -56,11 +56,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(230, 147);
+            ClientSize = new Size(337, 137);
             Controls.Add(btnSalir);
             Controls.Add(btnVerBuses);
             Name = "FormPrincipal";
-            Text = "Inicio";
+            Text = "Empresa de Transportes UPC";
             ResumeLayout(false);
         }
 

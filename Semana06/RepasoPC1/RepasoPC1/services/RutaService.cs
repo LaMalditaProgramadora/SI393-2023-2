@@ -13,21 +13,18 @@ namespace RepasoPC1.services
         private RutaRepository rutaRepository = new();
         public RutaService() { }
 
-        public bool Registrar(String matricula, Ruta ruta)
-        {
+        public bool Registrar(String matricula, Ruta ruta) {
             if (rutaRepository.Existe(ruta.Codigo))
             {
                 return false;
             }
-            else
-            {
+            else {
                 rutaRepository.Registrar(matricula, ruta);
                 return true;
             }
         }
 
-        public List<Ruta> ListarTodo(String matricula)
-        {
+        public List<Ruta> ListarTodo(String matricula) {
             return rutaRepository.ListarTodo(matricula);
         }
 

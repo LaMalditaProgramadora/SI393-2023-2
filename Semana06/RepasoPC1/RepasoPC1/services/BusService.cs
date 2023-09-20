@@ -11,6 +11,7 @@ namespace RepasoPC1.services
     internal class BusService
     {
         private BusRepository busRepository = new();
+
         public BusService() { }
 
         public bool Registrar(Bus bus) {
@@ -28,8 +29,7 @@ namespace RepasoPC1.services
             return BusRepository.ListarTodo();
         }
 
-        public List<Bus> ListarBusesConRutasMasLargas()
-        {
+        public List<Bus> ListarBusesConRutasMasLargas() {
             return busRepository.ListarBusesConRutasMasLargas();
         }
 
@@ -37,5 +37,6 @@ namespace RepasoPC1.services
         {
             return busRepository.ListarBusesConMenosRutas();
         }
+
     }
 }

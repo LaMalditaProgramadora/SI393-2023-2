@@ -3,6 +3,10 @@ D:\C#\Semana06\RepasoPC1\RepasoPC1\bin\Debug\net6.0-windows\RepasoPC1.deps.json
 D:\C#\Semana06\RepasoPC1\RepasoPC1\bin\Debug\net6.0-windows\RepasoPC1.runtimeconfig.json
 D:\C#\Semana06\RepasoPC1\RepasoPC1\bin\Debug\net6.0-windows\RepasoPC1.dll
 D:\C#\Semana06\RepasoPC1\RepasoPC1\bin\Debug\net6.0-windows\RepasoPC1.pdb
+D:\C#\Semana06\RepasoPC1\RepasoPC1\obj\Debug\net6.0-windows\RepasoPC1.FormBus.resources
+D:\C#\Semana06\RepasoPC1\RepasoPC1\obj\Debug\net6.0-windows\RepasoPC1.FormPrincipal.resources
+D:\C#\Semana06\RepasoPC1\RepasoPC1\obj\Debug\net6.0-windows\RepasoPC1.FormReporte.resources
+D:\C#\Semana06\RepasoPC1\RepasoPC1\obj\Debug\net6.0-windows\RepasoPC1.FormRuta.resources
 D:\C#\Semana06\RepasoPC1\RepasoPC1\obj\Debug\net6.0-windows\RepasoPC1.csproj.GenerateResource.cache
 D:\C#\Semana06\RepasoPC1\RepasoPC1\obj\Debug\net6.0-windows\RepasoPC1.GeneratedMSBuildEditorConfig.editorconfig
 D:\C#\Semana06\RepasoPC1\RepasoPC1\obj\Debug\net6.0-windows\RepasoPC1.AssemblyInfoInputs.cache
@@ -13,7 +17,3 @@ D:\C#\Semana06\RepasoPC1\RepasoPC1\obj\Debug\net6.0-windows\refint\RepasoPC1.dll
 D:\C#\Semana06\RepasoPC1\RepasoPC1\obj\Debug\net6.0-windows\RepasoPC1.pdb
 D:\C#\Semana06\RepasoPC1\RepasoPC1\obj\Debug\net6.0-windows\RepasoPC1.genruntimeconfig.cache
 D:\C#\Semana06\RepasoPC1\RepasoPC1\obj\Debug\net6.0-windows\ref\RepasoPC1.dll
-D:\C#\Semana06\RepasoPC1\RepasoPC1\obj\Debug\net6.0-windows\RepasoPC1.FormBus.resources
-D:\C#\Semana06\RepasoPC1\RepasoPC1\obj\Debug\net6.0-windows\RepasoPC1.FormPrincipal.resources
-D:\C#\Semana06\RepasoPC1\RepasoPC1\obj\Debug\net6.0-windows\RepasoPC1.FormRuta.resources
-D:\C#\Semana06\RepasoPC1\RepasoPC1\obj\Debug\net6.0-windows\RepasoPC1.FormReporte.resources

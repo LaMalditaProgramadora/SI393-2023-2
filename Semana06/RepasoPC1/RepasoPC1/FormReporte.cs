@@ -1,5 +1,4 @@
 ﻿using RepasoPC1.entities;
-using RepasoPC1.repositories;
 using RepasoPC1.services;
 using System;
 using System.Collections.Generic;
@@ -15,32 +14,40 @@ namespace RepasoPC1
 {
     public partial class FormReporte : Form
     {
-        private BusService busService = new();
         private RutaService rutaService = new();
+        private BusService busService = new();
 
         public FormReporte()
         {
             InitializeComponent();
         }
 
-        private bool ExistenCamposVacios()
+        private void MostrarRutas(List<Ruta> lista)
         {
-            return (tbBusConductor.Text == "");
+            listViewRutas.Items.Clear();
+            foreach (Ruta ruta in lista)
+            {
+                ListViewItem fila = new(ruta.Codigo);
+                fila.SubItems.Add(ruta.Origen);
+                fila.SubItems.Add(ruta.Destino);
+                fila.SubItems.Add(ruta.Kilometros.ToString());
+                listViewRutas.Items.Add(fila);
+            }
         }
 
         private void MostrarBuses(List<Bus> lista)
         {
-            dgvBuses.DataSource = new();
-            dgvBuses.DataSource = lista;
+            listViewBuses.Items.Clear();
+            foreach (Bus bus in lista)
+            {
+                ListViewItem fila = new(bus.Matricula);
+                fila.SubItems.Add(bus.Tipo);
+                fila.SubItems.Add(bus.Conductor);
+                listViewBuses.Items.Add(fila);
+            }
         }
 
-        private void MostrarRutas(List<Ruta> lista)
-        {
-            dgvRutas.DataSource = new();
-            dgvRutas.DataSource = lista;
-        }
-
-        private void btnBuscarBusesRutasMasLargas_Click(object sender, EventArgs e)
+        private void btnBuscarBusesConRutasMasLargas_Click(object sender, EventArgs e)
         {
             List<Bus> busesTemp = busService.ListarBusesConRutasMasLargas();
             MostrarBuses(busesTemp);
@@ -55,14 +62,13 @@ namespace RepasoPC1
         private void btnBuscarRutasPorConductorBus_Click(object sender, EventArgs e)
         {
             // Validación de campos
-            if (ExistenCamposVacios())
+            if (tbConductor.Text == "")
             {
-                MessageBox.Show("Ingrese el nombre del conductor");
+                MessageBox.Show("Ingrese conductor");
                 return;
             }
 
-            // Mostrar en DataGridView
-            List<Ruta> rutasTemp = rutaService.ListarRutasPorConductorBus(tbBusConductor.Text);
+            List<Ruta> rutasTemp = rutaService.ListarRutasPorConductorBus(tbConductor.Text);
             MostrarRutas(rutasTemp);
         }
 
@@ -71,4 +77,6 @@ namespace RepasoPC1
             this.Close();
         }
     }
+
+
 }

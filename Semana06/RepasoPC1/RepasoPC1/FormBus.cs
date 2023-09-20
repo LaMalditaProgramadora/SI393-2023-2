@@ -1,12 +1,20 @@
-using RepasoPC1.entities;
+ï»¿using RepasoPC1.entities;
 using RepasoPC1.services;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace RepasoPC1
 {
     public partial class FormBus : Form
     {
         private BusService busService = new();
-
         public FormBus()
         {
             InitializeComponent();
@@ -15,41 +23,47 @@ namespace RepasoPC1
 
         private void MostrarBuses(List<Bus> lista)
         {
-            dgvBuses.DataSource = new();
-            dgvBuses.DataSource = lista;
-        }
-
-        private bool ExistenCamposVacios()
-        {
-            return (cbBusTipo.Text == "" || tbBusMatricula.Text == "" || tbBusConductor.Text == "");
+            listViewBuses.Items.Clear();
+            foreach (Bus bus in lista)
+            {
+                ListViewItem fila = new(bus.Matricula);
+                fila.SubItems.Add(bus.Tipo);
+                fila.SubItems.Add(bus.Conductor);
+                listViewBuses.Items.Add(fila);
+            }
         }
 
         private bool BusNoSeleccionado()
         {
-            return (dgvBuses.SelectedRows.Count == 0 || dgvBuses.SelectedRows[0].Cells[0].Value == null);
+            return (listViewBuses.SelectedItems.Count == 0);
         }
 
-        private void btnBusRegistrar_Click(object sender, EventArgs e)
+        private bool ExistenCamposVacios()
         {
-            // Validación de campos
+            return (tbMatricula.Text == "" || tbTipo.Text == "" || tbConductor.Text == "");
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            // ValidaciÃ³n de campos
             if (ExistenCamposVacios())
             {
                 MessageBox.Show("Ingrese todos los campos");
                 return;
             }
 
-            // Creación del objeto
+            // CreaciÃ³n del objeto
             Bus bus = new(
-                tbBusMatricula.Text,
-                cbBusTipo.Text,
-                tbBusConductor.Text
+                tbMatricula.Text,
+                tbTipo.Text,
+                tbConductor.Text
                 );
 
             // Registro de bus
-            bool insertado = busService.Registrar(bus);
-            if (!insertado)
+            bool registrado = busService.Registrar(bus);
+            if (!registrado)
             {
-                MessageBox.Show("Ingrese un código diferente");
+                MessageBox.Show("Ingrese un cÃ³digo diferente");
                 return;
             }
 
@@ -61,12 +75,11 @@ namespace RepasoPC1
         {
             if (BusNoSeleccionado())
             {
-                MessageBox.Show("Seleccione un bus");
+                MessageBox.Show("Seleccione bus");
                 return;
             }
+            String? matricula = listViewBuses.SelectedItems[0].Text;
 
-            // Buscamos la primera columna de la fila seleccionada
-            String? matricula = dgvBuses.SelectedRows[0].Cells[0].Value.ToString();
             if (matricula != null)
             {
                 FormRuta form = new(matricula);
@@ -74,16 +87,15 @@ namespace RepasoPC1
             }
         }
 
-        private void btnReportes_Click(object sender, EventArgs e)
-        {
-            FormReporte form = new();
-            form.Show();
-        }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            FormReporte form = new();
+            form.Show();
+        }
     }
 }

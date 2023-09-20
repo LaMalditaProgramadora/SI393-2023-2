@@ -28,157 +28,172 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnSalir = new Button();
-            btnRutaRegistrar = new Button();
-            label4 = new Label();
-            cbRutaOrigen = new ComboBox();
-            dgvRutas = new DataGridView();
-            label3 = new Label();
-            tbRutaKilometros = new TextBox();
-            tbRutaCodigo = new TextBox();
-            label2 = new Label();
-            cbRutaDestino = new ComboBox();
+            tbCodigo = new TextBox();
+            tbOrigen = new TextBox();
+            tbDestino = new TextBox();
+            tbKilometros = new TextBox();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dgvRutas).BeginInit();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            btnRegistrar = new Button();
+            btnSalir = new Button();
+            listViewRutas = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
             SuspendLayout();
             // 
-            // btnSalir
+            // tbCodigo
             // 
-            btnSalir.Location = new Point(116, 193);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(75, 23);
-            btnSalir.TabIndex = 22;
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
+            tbCodigo.Location = new Point(99, 25);
+            tbCodigo.Name = "tbCodigo";
+            tbCodigo.Size = new Size(164, 23);
+            tbCodigo.TabIndex = 0;
             // 
-            // btnRutaRegistrar
+            // tbOrigen
             // 
-            btnRutaRegistrar.Location = new Point(116, 164);
-            btnRutaRegistrar.Name = "btnRutaRegistrar";
-            btnRutaRegistrar.Size = new Size(75, 23);
-            btnRutaRegistrar.TabIndex = 21;
-            btnRutaRegistrar.Text = "Registrar";
-            btnRutaRegistrar.UseVisualStyleBackColor = true;
-            btnRutaRegistrar.Click += btnRutaRegistrar_Click;
+            tbOrigen.Location = new Point(99, 54);
+            tbOrigen.Name = "tbOrigen";
+            tbOrigen.Size = new Size(164, 23);
+            tbOrigen.TabIndex = 1;
             // 
-            // label4
+            // tbDestino
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(50, 56);
-            label4.Name = "label4";
-            label4.Size = new Size(46, 15);
-            label4.TabIndex = 20;
-            label4.Text = "Origen:";
+            tbDestino.Location = new Point(99, 83);
+            tbDestino.Name = "tbDestino";
+            tbDestino.Size = new Size(164, 23);
+            tbDestino.TabIndex = 2;
             // 
-            // cbRutaOrigen
+            // tbKilometros
             // 
-            cbRutaOrigen.FormattingEnabled = true;
-            cbRutaOrigen.Items.AddRange(new object[] { "Origen 1", "Origen 2", "Origen 3" });
-            cbRutaOrigen.Location = new Point(102, 53);
-            cbRutaOrigen.Name = "cbRutaOrigen";
-            cbRutaOrigen.Size = new Size(160, 23);
-            cbRutaOrigen.TabIndex = 19;
-            // 
-            // dgvRutas
-            // 
-            dgvRutas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRutas.Location = new Point(296, 24);
-            dgvRutas.Name = "dgvRutas";
-            dgvRutas.RowTemplate.Height = 25;
-            dgvRutas.Size = new Size(479, 221);
-            dgvRutas.TabIndex = 18;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(46, 85);
-            label3.Name = "label3";
-            label3.Size = new Size(50, 15);
-            label3.TabIndex = 17;
-            label3.Text = "Destino:";
-            // 
-            // tbRutaKilometros
-            // 
-            tbRutaKilometros.Location = new Point(102, 111);
-            tbRutaKilometros.Name = "tbRutaKilometros";
-            tbRutaKilometros.Size = new Size(160, 23);
-            tbRutaKilometros.TabIndex = 16;
-            // 
-            // tbRutaCodigo
-            // 
-            tbRutaCodigo.Location = new Point(102, 24);
-            tbRutaCodigo.Name = "tbRutaCodigo";
-            tbRutaCodigo.Size = new Size(160, 23);
-            tbRutaCodigo.TabIndex = 15;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(47, 27);
-            label2.Name = "label2";
-            label2.Size = new Size(49, 15);
-            label2.TabIndex = 14;
-            label2.Text = "Código:";
-            // 
-            // cbRutaDestino
-            // 
-            cbRutaDestino.FormattingEnabled = true;
-            cbRutaDestino.Items.AddRange(new object[] { "Destino 1", "Destino 2", "Destino 3" });
-            cbRutaDestino.Location = new Point(102, 82);
-            cbRutaDestino.Name = "cbRutaDestino";
-            cbRutaDestino.Size = new Size(160, 23);
-            cbRutaDestino.TabIndex = 25;
+            tbKilometros.Location = new Point(99, 112);
+            tbKilometros.Name = "tbKilometros";
+            tbKilometros.Size = new Size(164, 23);
+            tbKilometros.TabIndex = 3;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(29, 114);
+            label1.Location = new Point(44, 28);
             label1.Name = "label1";
-            label1.Size = new Size(67, 15);
-            label1.TabIndex = 26;
-            label1.Text = "Kilómetros:";
+            label1.Size = new Size(49, 15);
+            label1.TabIndex = 4;
+            label1.Text = "Código:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(47, 57);
+            label2.Name = "label2";
+            label2.Size = new Size(46, 15);
+            label2.TabIndex = 5;
+            label2.Text = "Origen:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(43, 86);
+            label3.Name = "label3";
+            label3.Size = new Size(50, 15);
+            label3.TabIndex = 6;
+            label3.Text = "Destino:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(26, 115);
+            label4.Name = "label4";
+            label4.Size = new Size(67, 15);
+            label4.TabIndex = 7;
+            label4.Text = "Kilómetros:";
+            // 
+            // btnRegistrar
+            // 
+            btnRegistrar.Location = new Point(108, 162);
+            btnRegistrar.Name = "btnRegistrar";
+            btnRegistrar.Size = new Size(75, 23);
+            btnRegistrar.TabIndex = 9;
+            btnRegistrar.Text = "Registrar";
+            btnRegistrar.UseVisualStyleBackColor = true;
+            btnRegistrar.Click += btnRegistrar_Click;
+            // 
+            // btnSalir
+            // 
+            btnSalir.Location = new Point(108, 191);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(75, 23);
+            btnSalir.TabIndex = 10;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
+            // 
+            // listViewRutas
+            // 
+            listViewRutas.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
+            listViewRutas.Location = new Point(344, 28);
+            listViewRutas.Name = "listViewRutas";
+            listViewRutas.Size = new Size(419, 203);
+            listViewRutas.TabIndex = 11;
+            listViewRutas.UseCompatibleStateImageBehavior = false;
+            listViewRutas.View = View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Código";
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Origen";
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Destino";
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Kilómetros";
             // 
             // FormRuta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 274);
-            Controls.Add(label1);
-            Controls.Add(cbRutaDestino);
+            ClientSize = new Size(800, 327);
+            Controls.Add(listViewRutas);
             Controls.Add(btnSalir);
-            Controls.Add(btnRutaRegistrar);
+            Controls.Add(btnRegistrar);
             Controls.Add(label4);
-            Controls.Add(cbRutaOrigen);
-            Controls.Add(dgvRutas);
             Controls.Add(label3);
-            Controls.Add(tbRutaKilometros);
-            Controls.Add(tbRutaCodigo);
             Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(tbKilometros);
+            Controls.Add(tbDestino);
+            Controls.Add(tbOrigen);
+            Controls.Add(tbCodigo);
             Name = "FormRuta";
-            Text = "Información de Ruta";
-            ((System.ComponentModel.ISupportInitialize)dgvRutas).EndInit();
+            Text = "Rutas";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button btnReportes;
-        private Button btnVerRutas;
-        private Button btnSalir;
-        private Button btnRutaRegistrar;
-        private Label label4;
-        private ComboBox cbRutaOrigen;
-        private DataGridView dgvRutas;
-        private DataGridViewTextBoxColumn Matrícula;
-        private DataGridViewTextBoxColumn Tipo;
-        private DataGridViewTextBoxColumn Conductor;
-        private Label label3;
-        private TextBox tbRutaKilometros;
-        private TextBox tbRutaCodigo;
-        private Label label2;
-        private ComboBox cbRutaDestino;
+        private TextBox tbCodigo;
+        private TextBox tbOrigen;
+        private TextBox tbDestino;
+        private TextBox tbKilometros;
         private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private DataGridView dgvRutas;
+        private Button btnRegistrar;
+        private Button btnSalir;
+        private ListView listViewRutas;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
     }
 }

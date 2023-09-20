@@ -16,28 +16,33 @@ namespace RepasoPC1
     public partial class FormRuta : Form
     {
         private RutaService rutaService = new();
-        private String matricula;
+        String matricula;
 
-        public FormRuta(string matricula)
+        public FormRuta(String matricula)
         {
-            InitializeComponent();
             this.matricula = matricula;
+            InitializeComponent();
             MostrarRutas(rutaService.ListarTodo(matricula));
         }
 
         private void MostrarRutas(List<Ruta> lista)
         {
-            dgvRutas.DataSource = new();
-            dgvRutas.DataSource = lista;
+            listViewRutas.Items.Clear();
+            foreach (Ruta ruta in lista) {
+                ListViewItem fila = new(ruta.Codigo);
+                fila.SubItems.Add(ruta.Origen);
+                fila.SubItems.Add(ruta.Destino);
+                fila.SubItems.Add(ruta.Kilometros.ToString());
+                listViewRutas.Items.Add(fila);
+            }
         }
 
         private bool ExistenCamposVacios()
         {
-            return (tbRutaCodigo.Text == "" || cbRutaDestino.Text == "" ||
-                cbRutaDestino.Text == "" || tbRutaKilometros.Text == "");
+            return (tbCodigo.Text == "" || tbOrigen.Text == "" || tbDestino.Text == "" || tbKilometros.Text == "");
         }
 
-        private void btnRutaRegistrar_Click(object sender, EventArgs e)
+        private void btnRegistrar_Click(object sender, EventArgs e)
         {
             // Validación de campos
             if (ExistenCamposVacios())
@@ -48,15 +53,15 @@ namespace RepasoPC1
 
             // Creación del objeto
             Ruta ruta = new(
-                tbRutaCodigo.Text,
-                cbRutaDestino.Text,
-                cbRutaDestino.Text,
-                Double.Parse(tbRutaKilometros.Text))
-                ;
+                tbCodigo.Text,
+                tbOrigen.Text,
+                tbDestino.Text,
+                Double.Parse(tbKilometros.Text)
+                );
 
             // Registro de ruta
-            bool insertado = rutaService.Registrar(matricula, ruta);
-            if (!insertado)
+            bool registrado = rutaService.Registrar(matricula, ruta);
+            if (!registrado)
             {
                 MessageBox.Show("Ingrese un código diferente");
                 return;

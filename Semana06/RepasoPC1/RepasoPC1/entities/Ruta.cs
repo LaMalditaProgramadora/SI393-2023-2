@@ -1,8 +1,15 @@
-﻿namespace RepasoPC1.entities
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RepasoPC1.entities
 {
     internal class Ruta
     {
-        public Ruta(String codigo, String origen, String destino, Double kilometros) {
+        public Ruta(string codigo, string origen, string destino, double kilometros)
+        {
             Codigo = codigo;
             Origen = origen;
             Destino = destino;
@@ -14,10 +21,5 @@
         public String Destino { get; set; }
         public Double Kilometros { get; set; }
 
-        public String[] ConvertirArregloString()
-        {
-            String[] row = { Codigo, Origen, Destino, Kilometros.ToString() };
-            return row;
-        }
     }
 }

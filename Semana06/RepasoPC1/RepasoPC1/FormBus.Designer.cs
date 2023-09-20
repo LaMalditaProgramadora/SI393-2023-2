@@ -3,12 +3,12 @@
     partial class FormBus
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,161 +23,173 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
+            tbMatricula = new TextBox();
+            tbTipo = new TextBox();
+            tbConductor = new TextBox();
+            label1 = new Label();
             label2 = new Label();
-            tbBusMatricula = new TextBox();
-            tbBusConductor = new TextBox();
             label3 = new Label();
-            dgvBuses = new DataGridView();
-            cbBusTipo = new ComboBox();
-            label4 = new Label();
-            btnBusRegistrar = new Button();
-            btnSalir = new Button();
+            btnRegistrar = new Button();
             btnVerRutas = new Button();
-            btnReportes = new Button();
-            ((System.ComponentModel.ISupportInitialize)dgvBuses).BeginInit();
+            btnReporte = new Button();
+            btnSalir = new Button();
+            listViewBuses = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
             SuspendLayout();
+            // 
+            // tbMatricula
+            // 
+            tbMatricula.Location = new Point(99, 35);
+            tbMatricula.Name = "tbMatricula";
+            tbMatricula.Size = new Size(152, 23);
+            tbMatricula.TabIndex = 1;
+            // 
+            // tbTipo
+            // 
+            tbTipo.Location = new Point(99, 64);
+            tbTipo.Name = "tbTipo";
+            tbTipo.Size = new Size(152, 23);
+            tbTipo.TabIndex = 2;
+            // 
+            // tbConductor
+            // 
+            tbConductor.Location = new Point(99, 93);
+            tbConductor.Name = "tbConductor";
+            tbConductor.Size = new Size(152, 23);
+            tbConductor.TabIndex = 3;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(33, 38);
+            label1.Name = "label1";
+            label1.Size = new Size(60, 15);
+            label1.TabIndex = 4;
+            label1.Text = "Matrícula:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(36, 31);
+            label2.Location = new Point(60, 67);
             label2.Name = "label2";
-            label2.Size = new Size(60, 15);
-            label2.TabIndex = 2;
-            label2.Text = "Matrícula:";
-            // 
-            // tbBusMatricula
-            // 
-            tbBusMatricula.Location = new Point(102, 28);
-            tbBusMatricula.Name = "tbBusMatricula";
-            tbBusMatricula.Size = new Size(160, 23);
-            tbBusMatricula.TabIndex = 3;
-            // 
-            // tbBusConductor
-            // 
-            tbBusConductor.Location = new Point(102, 86);
-            tbBusConductor.Name = "tbBusConductor";
-            tbBusConductor.Size = new Size(160, 23);
-            tbBusConductor.TabIndex = 4;
+            label2.Size = new Size(33, 15);
+            label2.TabIndex = 5;
+            label2.Text = "Tipo:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(29, 89);
+            label3.Location = new Point(26, 96);
             label3.Name = "label3";
             label3.Size = new Size(67, 15);
-            label3.TabIndex = 5;
+            label3.TabIndex = 6;
             label3.Text = "Conductor:";
             // 
-            // dgvBuses
+            // btnRegistrar
             // 
-            dgvBuses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvBuses.Location = new Point(296, 28);
-            dgvBuses.Name = "dgvBuses";
-            dgvBuses.RowTemplate.Height = 25;
-            dgvBuses.Size = new Size(479, 221);
-            dgvBuses.TabIndex = 7;
-            // 
-            // cbBusTipo
-            // 
-            cbBusTipo.FormattingEnabled = true;
-            cbBusTipo.Items.AddRange(new object[] { "Tipo 1", "Tipo 2" });
-            cbBusTipo.Location = new Point(102, 57);
-            cbBusTipo.Name = "cbBusTipo";
-            cbBusTipo.Size = new Size(160, 23);
-            cbBusTipo.TabIndex = 8;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(63, 60);
-            label4.Name = "label4";
-            label4.Size = new Size(33, 15);
-            label4.TabIndex = 9;
-            label4.Text = "Tipo:";
-            // 
-            // btnBusRegistrar
-            // 
-            btnBusRegistrar.Location = new Point(120, 139);
-            btnBusRegistrar.Name = "btnBusRegistrar";
-            btnBusRegistrar.Size = new Size(75, 23);
-            btnBusRegistrar.TabIndex = 10;
-            btnBusRegistrar.Text = "Registrar";
-            btnBusRegistrar.UseVisualStyleBackColor = true;
-            btnBusRegistrar.Click += btnBusRegistrar_Click;
-            // 
-            // btnSalir
-            // 
-            btnSalir.Location = new Point(120, 226);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(75, 23);
-            btnSalir.TabIndex = 11;
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
+            btnRegistrar.Location = new Point(107, 146);
+            btnRegistrar.Name = "btnRegistrar";
+            btnRegistrar.Size = new Size(75, 23);
+            btnRegistrar.TabIndex = 7;
+            btnRegistrar.Text = "Registrar";
+            btnRegistrar.UseVisualStyleBackColor = true;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // btnVerRutas
             // 
-            btnVerRutas.Location = new Point(120, 168);
+            btnVerRutas.Location = new Point(107, 175);
             btnVerRutas.Name = "btnVerRutas";
             btnVerRutas.Size = new Size(75, 23);
-            btnVerRutas.TabIndex = 12;
+            btnVerRutas.TabIndex = 8;
             btnVerRutas.Text = "Ver Rutas";
             btnVerRutas.UseVisualStyleBackColor = true;
             btnVerRutas.Click += btnVerRutas_Click;
             // 
-            // btnReportes
+            // btnReporte
             // 
-            btnReportes.Location = new Point(120, 197);
-            btnReportes.Name = "btnReportes";
-            btnReportes.Size = new Size(75, 23);
-            btnReportes.TabIndex = 13;
-            btnReportes.Text = "Reportes";
-            btnReportes.UseVisualStyleBackColor = true;
-            btnReportes.Click += btnReportes_Click;
+            btnReporte.Location = new Point(107, 204);
+            btnReporte.Name = "btnReporte";
+            btnReporte.Size = new Size(75, 23);
+            btnReporte.TabIndex = 9;
+            btnReporte.Text = "Reporte";
+            btnReporte.UseVisualStyleBackColor = true;
+            btnReporte.Click += btnReporte_Click;
+            // 
+            // btnSalir
+            // 
+            btnSalir.Location = new Point(107, 233);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(75, 23);
+            btnSalir.TabIndex = 10;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
+            // 
+            // listViewBuses
+            // 
+            listViewBuses.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
+            listViewBuses.Location = new Point(318, 35);
+            listViewBuses.Name = "listViewBuses";
+            listViewBuses.Size = new Size(414, 254);
+            listViewBuses.TabIndex = 11;
+            listViewBuses.UseCompatibleStateImageBehavior = false;
+            listViewBuses.View = View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Matrícula";
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Tipo";
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Conductor";
             // 
             // FormBus
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(802, 281);
-            Controls.Add(btnReportes);
-            Controls.Add(btnVerRutas);
+            ClientSize = new Size(773, 350);
+            Controls.Add(listViewBuses);
             Controls.Add(btnSalir);
-            Controls.Add(btnBusRegistrar);
-            Controls.Add(label4);
-            Controls.Add(cbBusTipo);
-            Controls.Add(dgvBuses);
+            Controls.Add(btnReporte);
+            Controls.Add(btnVerRutas);
+            Controls.Add(btnRegistrar);
             Controls.Add(label3);
-            Controls.Add(tbBusConductor);
-            Controls.Add(tbBusMatricula);
             Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(tbConductor);
+            Controls.Add(tbTipo);
+            Controls.Add(tbMatricula);
             Name = "FormBus";
-            Text = "Información de Buses";
-            ((System.ComponentModel.ISupportInitialize)dgvBuses).EndInit();
+            Text = "Buses";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
+        private TextBox tbMatricula;
+        private TextBox tbTipo;
+        private TextBox tbConductor;
+        private Label label1;
         private Label label2;
-        private TextBox tbBusMatricula;
-        private TextBox tbBusConductor;
         private Label label3;
-        private DataGridView dgvBuses;
-        private ComboBox cbBusTipo;
-        private Label label4;
-        private Button btnBusRegistrar;
-        private Button btnSalir;
+        private Button btnRegistrar;
         private Button btnVerRutas;
-        private Button btnReportes;
-        private DataGridViewTextBoxColumn Matrícula;
-        private DataGridViewTextBoxColumn Tipo;
-        private DataGridViewTextBoxColumn Conductor;
+        private Button btnReporte;
+        private Button btnSalir;
+        private ListView listViewBuses;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
     }
 }
