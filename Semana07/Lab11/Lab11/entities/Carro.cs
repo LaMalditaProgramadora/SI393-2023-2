@@ -9,7 +9,7 @@ namespace Lab11.entities
     internal class Carro
     {
         public Carro() { }
-        public String Matricula;
-        public String Dueño;
+        public String Matricula { get; set; }
+        public String Dueño { get; set; }
     }
 }

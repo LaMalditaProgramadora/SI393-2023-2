@@ -40,6 +40,7 @@ namespace Lab12
                 NroColegiatura = tbNroColegiatura.Text,
                 NombreCompleto = tbNombreCompleto.Text,
                 Especialidad = tbEspecialidad.Text,
+                // ¡Importante!
                 Pacientes = new()
             };
 

@@ -1,4 +1,4 @@
-﻿using Lab11.controller;
+﻿using Lab11.controllers;
 using Lab11.entities;
 using System;
 using System.Collections.Generic;
@@ -14,12 +14,13 @@ namespace Lab11
 {
     public partial class FormEstacionamiento : Form
     {
-        private CarroController controller = new();
+        private CarroController carroController = new();
 
         public FormEstacionamiento()
         {
             InitializeComponent();
         }
+
 
         void Mostrar(Queue<Carro> cola)
         {
@@ -44,7 +45,7 @@ namespace Lab11
         private void buttonIngreso_Click(object sender, EventArgs e)
         {
 
-            if (controller.ObtenerCola().Count < 5)
+            if (carroController.ObtenerCola().Count < 5)
             {
                 MessageBox.Show("Se agregará al estacionamiento");
             }
@@ -61,10 +62,10 @@ namespace Lab11
             };
 
             // Ingresar a la cola
-            controller.Ingresar(carro);
+            carroController.Ingresar(carro);
 
-            // Mostrar en ListView
-            Mostrar(controller.ObtenerCola());
+            // Mostrar en el ListView
+            Mostrar(carroController.ObtenerCola());
         }
 
         private void buttonSalida_Click(object sender, EventArgs e)
@@ -72,12 +73,11 @@ namespace Lab11
             // Obtener matrícula
             String matricula = tbMatriculaSalida.Text;
 
-            // Sacar de la cola y mostrar movimientos
-            int movimientos = controller.Salir(matricula);
+            int movimientos = carroController.Salir(matricula);
             MessageBox.Show("Se realizaron " + movimientos.ToString() + " movimientos");
 
             // Mostrar en ListView
-            Mostrar(controller.ObtenerCola());
+            Mostrar(carroController.ObtenerCola());
         }
     }
 }
