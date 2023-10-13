@@ -35,7 +35,7 @@ namespace Lab13.repositories
             foreach (Vehiculo vehiculo in vehiculos)
             {
                 // Filtramos por año
-                List<Orden> ordenesTemp = vehiculo.Ordenes.FindAll(o => ConvertirFecha(o.FechaServicio).AddYears(2) < DateTime.Now);
+                List<Orden> ordenesTemp = vehiculo.Ordenes.FindAll(o => ConvertirFecha(o.FechaServicio).AddYears(2) > DateTime.Now);
                 // Obtenermos la cantidad de órdenes
                 int cantidadOrdenes = ordenesTemp.Count;
                 // Obtenemos los que tienen más órdenes
@@ -56,7 +56,7 @@ namespace Lab13.repositories
         public List<Vehiculo> OrdenarAscendentePorPlaca()
         {
             // OrderBy ordena de forma ascendente
-            List<Vehiculo> vehiculosTmp = (List<Vehiculo>) vehiculos.OrderBy(v => v.Placa);
+            List<Vehiculo> vehiculosTmp = vehiculos.OrderBy(v => v.Placa).ToList();
             return vehiculosTmp;
         }
 
@@ -69,18 +69,22 @@ namespace Lab13.repositories
             {
                 // Filtramos por nombre del servicio
                 List<Orden> ordenes = vehiculo.Ordenes.FindAll(o => o.NombreServicio.Equals(nombreServicio));
-                // Obtenermos el mayor monto
-                double monto = ordenes.Max(o => o.Monto);
-                // Obtenemos los que tienen el mayor monto
-                if (monto > maxMonto)
+
+                if (ordenes.Count > 0)
                 {
-                    maxMonto = monto;
-                    vehiculosTmp.Clear();
-                    vehiculosTmp.Add(vehiculo);
-                }
-                else if (monto == maxMonto)
-                {
-                    vehiculosTmp.Add(vehiculo);
+                    // Obtenermos el mayor monto
+                    double monto = ordenes.Max(o => o.Monto);
+                    // Obtenemos los que tienen el mayor monto
+                    if (monto > maxMonto)
+                    {
+                        maxMonto = monto;
+                        vehiculosTmp.Clear();
+                        vehiculosTmp.Add(vehiculo);
+                    }
+                    else if (monto == maxMonto)
+                    {
+                        vehiculosTmp.Add(vehiculo);
+                    }
                 }
             }
             return vehiculosTmp;
