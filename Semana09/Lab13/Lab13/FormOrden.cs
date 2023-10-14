@@ -16,11 +16,10 @@ namespace Lab13
     {
         private OrdenService oService = new OrdenService();
         private String placa;
-        public FormOrden(string placa)
+        public FormOrden(String placa)
         {
             InitializeComponent();
             this.placa = placa;
-            MostrarOrdenes(oService.ListarTodo(placa));
         }
 
         private void MostrarOrdenes(List<Orden> ordenes)
@@ -57,7 +56,7 @@ namespace Lab13
                 FechaServicio = tbFechaServicio.Text
             };
 
-            // Registro de la orden
+            // Registro
             bool registrado = oService.Registrar(placa, orden);
             if (!registrado)
             {

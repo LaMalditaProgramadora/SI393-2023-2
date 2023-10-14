@@ -10,7 +10,6 @@ namespace Lab13.repositories
     internal class VehiculoRepository
     {
         private static List<Vehiculo> vehiculos = new List<Vehiculo>();
-
         public VehiculoRepository() { }
 
         public bool Existe(String placa)
@@ -30,92 +29,91 @@ namespace Lab13.repositories
 
         public List<Vehiculo> ListarVehiculosMasOrdenesUltimos2Años()
         {
-            List<Vehiculo> vehiculosTmp = new List<Vehiculo>();
+            List<Vehiculo> vehiculosTemp = new List<Vehiculo>();
             int maxOrdenes = int.MinValue;
+
             foreach (Vehiculo vehiculo in vehiculos)
             {
-                // Filtramos por año
-                List<Orden> ordenesTemp = vehiculo.Ordenes.FindAll(o => ConvertirFecha(o.FechaServicio).AddYears(2) > DateTime.Now);
-                // Obtenermos la cantidad de órdenes
+                // Filtrar por año
+                List<Orden> ordenesTemp = vehiculo.Ordenes.FindAll(o => ConvertirFecha(o.FechaServicio).AddYears(2) >= DateTime.Now);
+                // Obtenemos la cantidad de órdenes.
                 int cantidadOrdenes = ordenesTemp.Count;
-                // Obtenemos los que tienen más órdenes
+                // Obtener los que tienen más ordenes
                 if (cantidadOrdenes > maxOrdenes)
                 {
                     maxOrdenes = cantidadOrdenes;
-                    vehiculosTmp.Clear();
-                    vehiculosTmp.Add(vehiculo);
+                    vehiculosTemp.Clear();
+                    vehiculosTemp.Add(vehiculo);
                 }
-                else if (cantidadOrdenes == maxOrdenes)
+                else if (cantidadOrdenes > maxOrdenes)
                 {
-                    vehiculosTmp.Add(vehiculo);
+                    vehiculosTemp.Add(vehiculo);
                 }
             }
-            return vehiculosTmp;
+            return vehiculosTemp;
         }
 
         public List<Vehiculo> OrdenarAscendentePorPlaca()
         {
-            // OrderBy ordena de forma ascendente
-            List<Vehiculo> vehiculosTmp = vehiculos.OrderBy(v => v.Placa).ToList();
-            return vehiculosTmp;
+            List<Vehiculo> vehiculosTemp = vehiculos.OrderBy(v => v.Placa).ToList();
+            return vehiculosTemp;
         }
 
         public List<Vehiculo> ListarVehiculosMayorMontoPorServicio(String nombreServicio)
         {
-            List<Vehiculo> vehiculosTmp = new List<Vehiculo>();
-
+            List<Vehiculo> vehiculosTemp = new List<Vehiculo>();
             double maxMonto = double.MinValue;
+
             foreach (Vehiculo vehiculo in vehiculos)
             {
-                // Filtramos por nombre del servicio
-                List<Orden> ordenes = vehiculo.Ordenes.FindAll(o => o.NombreServicio.Equals(nombreServicio));
+                // Filtrar por nombre servicio
+                List<Orden> ordenesTemp = vehiculo.Ordenes.FindAll(o => o.NombreServicio.Equals(nombreServicio));
 
-                if (ordenes.Count > 0)
-                {
-                    // Obtenermos el mayor monto
-                    double monto = ordenes.Max(o => o.Monto);
-                    // Obtenemos los que tienen el mayor monto
+                if (ordenesTemp.Count > 0) {
+                    // Calcular mayor monto
+                    double monto = ordenesTemp.Max(o => o.Monto);
                     if (monto > maxMonto)
                     {
                         maxMonto = monto;
-                        vehiculosTmp.Clear();
-                        vehiculosTmp.Add(vehiculo);
+                        vehiculosTemp.Clear();
+                        vehiculosTemp.Add(vehiculo);
                     }
-                    else if (monto == maxMonto)
+                    else if (monto > maxMonto)
                     {
-                        vehiculosTmp.Add(vehiculo);
+                        vehiculosTemp.Add(vehiculo);
                     }
                 }
             }
-            return vehiculosTmp;
+            return vehiculosTemp;
         }
 
         public List<Vehiculo> ListarVehiculosMenosOrdenes()
         {
-            List<Vehiculo> vehiculosTmp = new List<Vehiculo>();
+            List<Vehiculo> vehiculosTemp = new List<Vehiculo>();
             int minOrdenes = int.MaxValue;
+
             foreach (Vehiculo vehiculo in vehiculos)
             {
-                // Obtenermos la cantidad de órdenes
+                // Obtenemos la cantidad de órdenes.
                 int cantidadOrdenes = vehiculo.Ordenes.Count;
-                // Obtenemos los que tienen menos órdenes
+                // Obtener los que tienen menos ordenes
                 if (cantidadOrdenes < minOrdenes)
                 {
                     minOrdenes = cantidadOrdenes;
-                    vehiculosTmp.Clear();
-                    vehiculosTmp.Add(vehiculo);
+                    vehiculosTemp.Clear();
+                    vehiculosTemp.Add(vehiculo);
                 }
-                else if (cantidadOrdenes == minOrdenes)
+                else if (cantidadOrdenes > minOrdenes)
                 {
-                    vehiculosTmp.Add(vehiculo);
+                    vehiculosTemp.Add(vehiculo);
                 }
             }
-            return vehiculosTmp;
+            return vehiculosTemp;
         }
 
-        private DateTime ConvertirFecha(String fecha) {
+        private DateTime ConvertirFecha(String fecha)
+        {
             return DateTime.ParseExact(fecha, "yyyyMMdd", System.Globalization.CultureInfo.InvariantCulture);
         }
-      
     }
 }

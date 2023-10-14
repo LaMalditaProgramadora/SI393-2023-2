@@ -15,16 +15,16 @@ namespace Lab13
     public partial class FormVehiculo : Form
     {
         private VehiculoService vService = new VehiculoService();
+
         public FormVehiculo()
         {
             InitializeComponent();
-            MostrarVehiculos(vService.ListarTodo());
         }
 
         private void MostrarVehiculos(List<Vehiculo> vehiculos)
         {
             listViewVehiculos.Items.Clear();
-            foreach(Vehiculo vehiculo in vehiculos)
+            foreach (Vehiculo vehiculo in vehiculos)
             {
                 ListViewItem fila = new ListViewItem(vehiculo.Placa);
                 fila.SubItems.Add(vehiculo.NumeroTarjetaPropiedad);
@@ -59,7 +59,7 @@ namespace Lab13
                 Ordenes = new List<Orden>()
             };
 
-            // Registro de vehículo
+            // Registro
             bool registrado = vService.Registrar(vehiculo);
             if (!registrado)
             {
@@ -67,22 +67,20 @@ namespace Lab13
                 return;
             }
 
-            // Mostrar en el ListView
+            // Mostrar en ListView
             MostrarVehiculos(vService.ListarTodo());
         }
 
         private void btnVerOrdenes_Click(object sender, EventArgs e)
         {
-            // Validación de selección
             if (listViewVehiculos.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Seleccione vehículo");
+                MessageBox.Show("Seleccione un vehículo");
                 return;
             }
 
-            // Obtenemos la placa del vehículo seleccionado
+            // Obtenemos la placa
             String placa = listViewVehiculos.SelectedItems[0].Text;
-
             FormOrden form = new FormOrden(placa);
             form.Show();
         }

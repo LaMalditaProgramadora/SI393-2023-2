@@ -15,6 +15,7 @@ namespace Lab13
     public partial class FormReporte : Form
     {
         private VehiculoService vService = new VehiculoService();
+
         public FormReporte()
         {
             InitializeComponent();
@@ -47,7 +48,7 @@ namespace Lab13
 
         private void btnBuscarVehiculosMayorMontoPorNombreServicio_Click(object sender, EventArgs e)
         {
-            if(cbNombreServicio.Text == "")
+            if (cbNombreServicio.Text == "")
             {
                 MessageBox.Show("Seleccione nombre del servicio");
                 return;

@@ -9,15 +9,14 @@ namespace Lab13.repositories
 {
     internal class OrdenRepository
     {
-
         public OrdenRepository() { }
 
         public bool Existe(String codigo)
         {
-            List<Vehiculo> vechiculos = VehiculoRepository.ListarTodo();
-            foreach (Vehiculo vechiculo in vechiculos)
+            List<Vehiculo> vehiculos = VehiculoRepository.ListarTodo();
+            foreach (Vehiculo vehiculo in vehiculos)
             {
-                bool existe = vechiculo.Ordenes.Exists(o => o.Codigo.Equals(codigo));
+                bool existe = vehiculo.Ordenes.Exists(o => o.Codigo.Equals(codigo));
                 if (existe)
                 {
                     return true;
@@ -30,20 +29,23 @@ namespace Lab13.repositories
         {
             List<Vehiculo> vehiculos = VehiculoRepository.ListarTodo();
 
-            // Buscar el vehiculo por la placa
+            // Buscar el vehículo por placa
             Vehiculo vehiculo = vehiculos.Find(v => v.Placa.Equals(placa));
+
             if (vehiculo != null)
             {
                 vehiculo.Ordenes.Add(orden);
             }
+            
         }
 
         public List<Orden> ListarTodo(String placa)
         {
             List<Vehiculo> vehiculos = VehiculoRepository.ListarTodo();
 
-            // Buscar el vehiculo por  la placa
+            // Buscar el vehículo por placa
             Vehiculo vehiculo = vehiculos.Find(v => v.Placa.Equals(placa));
+
             if (vehiculo != null)
             {
                 return vehiculo.Ordenes;
@@ -53,6 +55,5 @@ namespace Lab13.repositories
                 return new List<Orden>();
             }
         }
-
     }
 }
