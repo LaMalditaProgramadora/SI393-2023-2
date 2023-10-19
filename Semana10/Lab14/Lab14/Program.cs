@@ -17,7 +17,7 @@ namespace Lab14
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormTrabajador());
+            Application.Run(new FormEmpleado());
         }
     }
 }

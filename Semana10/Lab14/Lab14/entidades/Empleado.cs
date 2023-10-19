@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Lab14.entidades
 {
-    internal class Trabajador
+    internal class Empleado
     {
-        public Trabajador() { }
-        public String Dni {  get; set; }
-        public String Nombre {  get; set; }
+        public Empleado() { }
+        public String Dni { get; set; }
+        public String Nombre { get; set; }
         public String Puesto { get; set; }
         public double Sueldo { get; set; }
     }

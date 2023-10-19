@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{83811E8E-CD81-4888-8586-8F67D072D2DF}</ProjectGuid>
+    <ProjectGuid>{731986E6-4960-433A-914F-D2A5CFEDDC55}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Lab14</RootNamespace>
     <AssemblyName>Lab14</AssemblyName>
@@ -46,19 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="datos\TrabajadorDatos.cs" />
-    <Compile Include="entidades\Trabajador.cs" />
-    <Compile Include="negocio\TrabajadorNegocio.cs" />
-    <Compile Include="presentación\FormTrabajador.cs">
+    <Compile Include="datos\EmpleadoDatos.cs" />
+    <Compile Include="entidades\Empleado.cs" />
+    <Compile Include="negocio\EmpleadoNegocio.cs" />
+    <Compile Include="presentación\FormEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentación\FormTrabajador.Designer.cs">
-      <DependentUpon>FormTrabajador.cs</DependentUpon>
+    <Compile Include="presentación\FormEmpleado.Designer.cs">
+      <DependentUpon>FormEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="presentación\FormTrabajador.resx">
-      <DependentUpon>FormTrabajador.cs</DependentUpon>
+    <EmbeddedResource Include="presentación\FormEmpleado.resx">
+      <DependentUpon>FormEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

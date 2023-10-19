@@ -1,6 +1,6 @@
 ﻿namespace Lab14.presentación
 {
-    partial class FormTrabajador
+    partial class FormEmpleado
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.listViewTrabajadores = new System.Windows.Forms.ListView();
+            this.listViewEmpleados = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -98,20 +98,20 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Puesto:";
             // 
-            // listViewTrabajadores
+            // listViewEmpleados
             // 
-            this.listViewTrabajadores.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewEmpleados.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
-            this.listViewTrabajadores.HideSelection = false;
-            this.listViewTrabajadores.Location = new System.Drawing.Point(241, 12);
-            this.listViewTrabajadores.Name = "listViewTrabajadores";
-            this.listViewTrabajadores.Size = new System.Drawing.Size(512, 206);
-            this.listViewTrabajadores.TabIndex = 6;
-            this.listViewTrabajadores.UseCompatibleStateImageBehavior = false;
-            this.listViewTrabajadores.View = System.Windows.Forms.View.Details;
+            this.listViewEmpleados.HideSelection = false;
+            this.listViewEmpleados.Location = new System.Drawing.Point(241, 12);
+            this.listViewEmpleados.Name = "listViewEmpleados";
+            this.listViewEmpleados.Size = new System.Drawing.Size(512, 206);
+            this.listViewEmpleados.TabIndex = 6;
+            this.listViewEmpleados.UseCompatibleStateImageBehavior = false;
+            this.listViewEmpleados.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -173,7 +173,7 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // FormTrabajador
+            // FormEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -182,15 +182,15 @@
             this.Controls.Add(this.btnOrdenarPorSueldo);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnRegistrar);
-            this.Controls.Add(this.listViewTrabajadores);
+            this.Controls.Add(this.listViewEmpleados);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbPuesto);
             this.Controls.Add(this.tbNombre);
             this.Controls.Add(this.tbDni);
-            this.Name = "FormTrabajador";
-            this.Text = "Trabajadores";
+            this.Name = "FormEmpleado";
+            this.Text = "Empleados";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,7 +204,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListView listViewTrabajadores;
+        private System.Windows.Forms.ListView listViewEmpleados;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
