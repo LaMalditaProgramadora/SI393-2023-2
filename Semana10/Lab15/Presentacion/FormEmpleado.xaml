@@ -5,23 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Presentacion"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="800">
+        Title="FormEmpleado" Height="300" Width="800">
     <Grid>
-        <Label Content="Dni:" HorizontalAlignment="Left" Margin="52,24,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.553,-1"/>
-        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="27,47,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.395,0.233"/>
-        <Label Content="Puesto:" HorizontalAlignment="Left" Margin="34,74,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbDni" HorizontalAlignment="Left" Margin="88,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Margin="88,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="cbPuesto" HorizontalAlignment="Left" Margin="88,76,0,0" VerticalAlignment="Top" Width="120">
+        <Label Content="Dni:" HorizontalAlignment="Left" Margin="44,15,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="19,38,0,0" VerticalAlignment="Top"/>
+        <Label Content="Puesto:" HorizontalAlignment="Left" Margin="26,61,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbDni" HorizontalAlignment="Left" Margin="80,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+        <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Margin="80,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+        <ComboBox x:Name="cbPuesto" HorizontalAlignment="Left" Margin="80,65,0,0" VerticalAlignment="Top" Width="140">
             <ComboBoxItem Content="Auxiliar"/>
             <ComboBoxItem Content="Asistente"/>
             <ComboBoxItem Content="Administrador"/>
         </ComboBox>
-        <Button x:Name="btnRegistrar" Content="Registrar" HorizontalAlignment="Left" Margin="55,136,0,0" VerticalAlignment="Top" Width="132" Click="btnRegistrar_Click"/>
-        <Button x:Name="btnEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="55,161,0,0" VerticalAlignment="Top" Width="132" Click="btnEliminar_Click"/>
-        <Button x:Name="btnOrdenarPorSueldo" Content="Ordenar por Sueldo" HorizontalAlignment="Left" Margin="55,186,0,0" VerticalAlignment="Top" Width="132" Click="btnOrdenarPorSueldo_Click"/>
-        <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Margin="55,211,0,0" VerticalAlignment="Top" Width="132" Click="btnSalir_Click"/>
-        <DataGrid x:Name="dgEmpleados" Margin="242,24,41,53" SelectionChanged="dgEmpleados_SelectionChanged"/>
+        <Button x:Name="btnRegistrar" Content="Registrar" HorizontalAlignment="Left" Margin="68,118,0,0" VerticalAlignment="Top" Width="124" Click="btnRegistrar_Click"/>
+        <Button x:Name="btnEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="68,143,0,0" VerticalAlignment="Top" Width="124" Click="btnEliminar_Click"/>
+        <Button x:Name="btnOrdenarPorSueldo" Content="Ordenar por Sueldo" HorizontalAlignment="Left" Margin="68,168,0,0" VerticalAlignment="Top" Width="124" Click="btnOrdenarPorSueldo_Click"/>
+        <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Margin="68,193,0,0" VerticalAlignment="Top" Width="124" Click="btnSalir_Click"/>
+        <DataGrid x:Name="dgEmpleados" Margin="259,19,22,20" RenderTransformOrigin="0.5,0.5" SelectionChanged="dgEmpleados_SelectionChanged">
+            <DataGrid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.509"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="1.991"/>
+                </TransformGroup>
+            </DataGrid.RenderTransform>
+        </DataGrid>
 
     </Grid>
 </Window>

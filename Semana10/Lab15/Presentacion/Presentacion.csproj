@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7E88EBE3-9701-4A94-B2A9-F6B66F612333}</ProjectGuid>
+    <ProjectGuid>{5560402C-6DD4-4C21-A7C4-3E4F8EBDF52F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Presentacion</RootNamespace>
     <AssemblyName>Presentacion</AssemblyName>
@@ -56,8 +56,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="FormEmpleado.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -65,7 +65,6 @@
     </Compile>
     <Compile Include="FormEmpleado.xaml.cs">
       <DependentUpon>FormEmpleado.xaml</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -96,11 +95,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
-      <Project>{c244772d-e329-41c8-be75-18dd3556d9af}</Project>
+      <Project>{58aa5e51-f15a-409d-815c-f5bfa98967ba}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
     <ProjectReference Include="..\Negocio\Negocio.csproj">
-      <Project>{db1702a3-371d-43d4-b640-b59b4dffed6b}</Project>
+      <Project>{43dace17-e245-453c-b945-03ca8a624068}</Project>
       <Name>Negocio</Name>
     </ProjectReference>
   </ItemGroup>

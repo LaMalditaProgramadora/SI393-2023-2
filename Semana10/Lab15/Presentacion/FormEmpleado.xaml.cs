@@ -1,17 +1,29 @@
 ﻿using Entidades;
 using Negocio;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
 namespace Presentacion
 {
     /// <summary>
-    /// Lógica de interacción para FrmPrincipal.xaml
+    /// Lógica de interacción para FormEmpleado.xaml
     /// </summary>
     public partial class FormEmpleado : Window
     {
+        private EEmpleado empleadoSeleccionado = null;
         private NEmpleado nEmpleado = new NEmpleado();
-        EEmpleado empleadoSeleccionado = null;
+
         public FormEmpleado()
         {
             InitializeComponent();
@@ -48,7 +60,7 @@ namespace Presentacion
                 return;
             }
 
-            // Mostrar en el ListView
+            // Mostrar en el DataGrid
             Mostrar(nEmpleado.ListarTodo());
         }
 
@@ -64,13 +76,13 @@ namespace Presentacion
             // Eliminar
             nEmpleado.Eliminar(empleadoSeleccionado.Dni);
 
-            // Mostrar en el ListView
+            // Mostrar en el DataGrid
             Mostrar(nEmpleado.ListarTodo());
         }
 
         private void btnOrdenarPorSueldo_Click(object sender, RoutedEventArgs e)
         {
-            // Mostrar en el ListView
+            // Mostrar en el DataGrid
             Mostrar(nEmpleado.ListarOrdenadoPorSueldo());
         }
 
@@ -79,7 +91,7 @@ namespace Presentacion
             this.Close();
         }
 
-        private void dgEmpleados_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        private void dgEmpleados_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             empleadoSeleccionado = dgEmpleados.SelectedItem as EEmpleado;
         }
