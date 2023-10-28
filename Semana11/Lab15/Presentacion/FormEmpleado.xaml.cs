@@ -72,7 +72,7 @@ namespace Presentacion
             }
 
             // Eliminar
-            String mensaje = nEmpleado.Eliminar(empleadoSeleccionado.Dni);
+            String mensaje = nEmpleado.Eliminar(empleadoSeleccionado.Id);
             MessageBox.Show(mensaje);
 
             // Mostrar en el DataGrid

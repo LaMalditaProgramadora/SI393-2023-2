@@ -54,7 +54,7 @@ namespace Datos
         }
 
 
-        public String Eliminar(String id)
+        public String Eliminar(int id)
         {
             try
             {
@@ -62,7 +62,7 @@ namespace Datos
                 String delete = String.Format("DELETE FROM Empleado WHERE Id={0}", id);
                 SqlCommand cmd = new SqlCommand(delete, con);
                 cmd.ExecuteNonQuery();
-                return "Modificado correctamente";
+                return "Eliminado correctamente";
             }
             catch (Exception ex)
             {

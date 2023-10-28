@@ -26,9 +26,9 @@ namespace Negocio
                 return dEmpleado.Registrar(empleado);
         }
 
-        public String Eliminar(String dni)
+        public String Eliminar(int id)
         {
-            return dEmpleado.Eliminar(dni);
+            return dEmpleado.Eliminar(id);
         }
 
         public List<EEmpleado> ListarTodo()
