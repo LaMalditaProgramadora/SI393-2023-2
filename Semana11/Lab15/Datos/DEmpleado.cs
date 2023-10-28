@@ -2,13 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Datos
 {
     public class DEmpleado
     {
         private Database db = new Database();
-
         public DEmpleado() { }
 
         public String Registrar(EEmpleado empleado)
@@ -52,7 +54,6 @@ namespace Datos
                 db.DesconectaDb();
             }
         }
-
 
         public String Eliminar(int id)
         {

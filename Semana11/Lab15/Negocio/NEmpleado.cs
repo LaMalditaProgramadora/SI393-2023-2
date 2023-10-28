@@ -24,6 +24,7 @@ namespace Negocio
                     default: empleado.Sueldo = 2000; break;
                 }
                 return dEmpleado.Registrar(empleado);
+            
         }
 
         public String Eliminar(int id)
