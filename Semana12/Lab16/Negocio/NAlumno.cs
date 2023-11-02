@@ -14,14 +14,21 @@ namespace Negocio
 
         public String Registrar(Alumno alumno)
         {
-            // Lógica del negocio
-            alumno.NotaFinalPC2 = alumno.PromedioTA * (decimal) 0.2 + alumno.PC2 * (decimal) 0.8;
+            // Lógica de Negocio
+            alumno.NotaFinalPC2 = alumno.PromedioTA * (decimal)0.2 + alumno.PC2 * (decimal)0.8;
             return dAlumno.Registrar(alumno);
         }
 
-        public String Eliminar(int id)
+        public String Modificar(Alumno alumno)
         {
-            return dAlumno.Eliminar(id);
+            // Lógica de Negocio
+            alumno.NotaFinalPC2 = alumno.PromedioTA * (decimal)0.2 + alumno.PC2 * (decimal)0.8;
+            return dAlumno.Modificar(alumno);
+        }
+
+        public String Elimnar(int id)
+        {
+            return dAlumno.Elimnar(id);
         }
 
         public List<Alumno> ListarTodo()
@@ -29,9 +36,10 @@ namespace Negocio
             return dAlumno.ListarTodo();
         }
 
-        public List<Alumno> ListarOrdenadoPorNotaFinalPC2()
+        public List<Alumno> ListarTodoOrdenadoPorNotaFinalPC2()
         {
-            return dAlumno.ListarOrdenadoPorNotaFinalPC2();
+            return dAlumno.ListarTodoOrdenadoPorNotaFinalPC2();
         }
+
     }
 }

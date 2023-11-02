@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Datos
 {
@@ -19,9 +19,9 @@ namespace Datos
                     context.Alumno.Add(alumno);
                     context.SaveChanges();
                 }
-                return "Registrado correctamente";
+                return "Registrado exitosamente";
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 return ex.Message;
             }
@@ -41,7 +41,7 @@ namespace Datos
                     alumnoTemp.NotaFinalPC2 = alumno.NotaFinalPC2;
                     context.SaveChanges();
                 }
-                return "Modificado correctamente";
+                return "Modificado exitosamente";
             }
             catch (Exception ex)
             {
@@ -49,17 +49,17 @@ namespace Datos
             }
         }
 
-        public String Eliminar(int id)
+        public String Elimnar(int id)
         {
             try
             {
                 using (var context = new BDEFEntities())
                 {
-                    Alumno paisTemp = context.Alumno.Find(id);
-                    context.Alumno.Remove(paisTemp);
+                    Alumno alumnoTemp = context.Alumno.Find(id);
+                    context.Alumno.Remove(alumnoTemp);
                     context.SaveChanges();
                 }
-                return "Eliminado correctamente";
+                return "Eliminaado exitosamente";
             }
             catch (Exception ex)
             {
@@ -69,9 +69,9 @@ namespace Datos
 
         public List<Alumno> ListarTodo()
         {
+            List<Alumno> alumnos = new List<Alumno>();
             try
             {
-                List<Alumno> alumnos = new List<Alumno>();
                 using (var context = new BDEFEntities())
                 {
                     alumnos = context.Alumno.ToList();
@@ -80,15 +80,15 @@ namespace Datos
             }
             catch (Exception ex)
             {
-                return null;
+                return alumnos;
             }
         }
 
-        public List<Alumno> ListarOrdenadoPorNotaFinalPC2()
+        public List<Alumno> ListarTodoOrdenadoPorNotaFinalPC2()
         {
+            List<Alumno> alumnos = new List<Alumno>();
             try
             {
-                List<Alumno> alumnos = new List<Alumno>();
                 using (var context = new BDEFEntities())
                 {
                     alumnos = context.Alumno.OrderBy(a => a.NotaFinalPC2).ToList();
@@ -97,9 +97,25 @@ namespace Datos
             }
             catch (Exception ex)
             {
-                return null;
+                return alumnos;
             }
+        }
 
+        public List<Alumno> ListarTodoBuscarPorCodigo(String codigo)
+        {
+            List<Alumno> alumnos = new List<Alumno>();
+            try
+            {
+                using (var context = new BDEFEntities())
+                {
+                    alumnos = context.Alumno.Where(a => a.Codigo.Equals(codigo)).ToList();
+                }
+                return alumnos;
+            }
+            catch (Exception ex)
+            {
+                return alumnos;
+            }
         }
     }
 }

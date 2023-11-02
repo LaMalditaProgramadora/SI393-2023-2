@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{13A36694-3C15-4EB4-BAA0-E29834BA8C08}</ProjectGuid>
+    <ProjectGuid>{F4EC659A-7307-42BF-8691-C3EB58ED31DF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Datos</RootNamespace>
@@ -72,9 +72,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
     <EntityDeploy Include="ModelEF.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelEF.Designer.cs</LastGenOutput>
@@ -98,6 +95,9 @@
       <DependentUpon>ModelEF.edmx</DependentUpon>
       <LastGenOutput>ModelEF.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

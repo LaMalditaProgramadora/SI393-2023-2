@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A5FB89C8-3492-470C-853E-6E734C4D9637}</ProjectGuid>
+    <ProjectGuid>{D38B6781-0EAA-4E94-8F8E-62704252EB32}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Negocio</RootNamespace>
@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">
-      <Project>{13a36694-3c15-4eb4-baa0-e29834ba8c08}</Project>
+      <Project>{f4ec659a-7307-42bf-8691-c3eb58ed31df}</Project>
       <Name>Datos</Name>
     </ProjectReference>
   </ItemGroup>

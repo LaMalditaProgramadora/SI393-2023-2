@@ -3,6 +3,7 @@ using Negocio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,17 +22,16 @@ namespace Presentacion
     /// </summary>
     public partial class AlumnoWindow : Window
     {
-        private Alumno alumnoSeleccionado = null;
         private NAlumno nAlumno = new NAlumno();
+        private Alumno alumnoSeleccionado = null;
 
         public AlumnoWindow()
         {
             InitializeComponent();
-            // Mostrar en el DataGrid
-            Mostrar(nAlumno.ListarTodo());
+            MostrarAlumnos(nAlumno.ListarTodo());
         }
 
-        private void Mostrar(List<Alumno> alumnos)
+        private void MostrarAlumnos(List<Alumno> alumnos)
         {
             dgAlumnos.ItemsSource = new List<Alumno>();
             dgAlumnos.ItemsSource = alumnos;
@@ -60,7 +60,7 @@ namespace Presentacion
             MessageBox.Show(mensaje);
 
             // Mostrar en el DataGrid
-            Mostrar(nAlumno.ListarTodo());
+            MostrarAlumnos(nAlumno.ListarTodo());
         }
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
@@ -73,17 +73,17 @@ namespace Presentacion
             }
 
             // Eliminar
-            String mensaje = nAlumno.Eliminar(alumnoSeleccionado.Id);
+            String mensaje = nAlumno.Elimnar(alumnoSeleccionado.Id);
             MessageBox.Show(mensaje);
 
             // Mostrar en el DataGrid
-            Mostrar(nAlumno.ListarTodo());
+            MostrarAlumnos(nAlumno.ListarTodo());
         }
 
         private void btnOrdenarPorNotaFinalPC2_Click(object sender, RoutedEventArgs e)
         {
             // Mostrar en el DataGrid
-            Mostrar(nAlumno.ListarOrdenadoPorNotaFinalPC2());
+            MostrarAlumnos(nAlumno.ListarTodoOrdenadoPorNotaFinalPC2());
         }
 
         private void btnSalir_Click(object sender, RoutedEventArgs e)

@@ -11,10 +11,10 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Codigo" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="NombreCompleto" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="PromedioTA" Type="decimal" Precision="2" Scale="0" Nullable="false" />
-          <Property Name="PC2" Type="decimal" Precision="2" Scale="0" Nullable="false" />
-          <Property Name="NotaFinalPC2" Type="decimal" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="NombreCompleto" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PromedioTA" Type="decimal" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="PC2" Type="decimal" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="NotaFinalPC2" Type="decimal" Precision="4" Scale="2" Nullable="false" />
         </EntityType>
         <EntityContainer Name="ModelEFStoreContainer">
           <EntitySet Name="Alumno" EntityType="Self.Alumno" Schema="dbo" store:Type="Tables" />
@@ -30,10 +30,10 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="NombreCompleto" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="PromedioTA" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
-          <Property Name="PC2" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
-          <Property Name="NotaFinalPC2" Type="Decimal" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="NombreCompleto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PromedioTA" Type="Decimal" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="PC2" Type="Decimal" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="NotaFinalPC2" Type="Decimal" Precision="4" Scale="2" Nullable="false" />
         </EntityType>
         <EntityContainer Name="BDEFEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Alumno" EntityType="Self.Alumno" />

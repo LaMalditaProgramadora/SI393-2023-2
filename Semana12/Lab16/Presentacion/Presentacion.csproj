@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9AAE222D-951A-45C5-A309-1450628DF51F}</ProjectGuid>
+    <ProjectGuid>{B4DE616B-CC65-42E1-AC9D-5399BB23F033}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Presentacion</RootNamespace>
     <AssemblyName>Presentacion</AssemblyName>
@@ -111,16 +111,13 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">
-      <Project>{13a36694-3c15-4eb4-baa0-e29834ba8c08}</Project>
+      <Project>{f4ec659a-7307-42bf-8691-c3eb58ed31df}</Project>
       <Name>Datos</Name>
     </ProjectReference>
     <ProjectReference Include="..\Negocio\Negocio.csproj">
-      <Project>{a5fb89c8-3492-470c-853e-6e734c4d9637}</Project>
+      <Project>{d38b6781-0eaa-4e94-8f8e-62704252eb32}</Project>
       <Name>Negocio</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
