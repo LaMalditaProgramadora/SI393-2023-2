@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ModelEF.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Curso">
+          <Key>
+            <PropertyRef Name="Id_curso" />
+          </Key>
+          <Property Name="Id_curso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombrecurso" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Docente">
+          <Key>
+            <PropertyRef Name="Id_docente" />
+          </Key>
+          <Property Name="Id_docente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apellido" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Escuela" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DocentexCurso">
+          <Key>
+            <PropertyRef Name="Id_docente" />
+            <PropertyRef Name="Id_curso" />
+          </Key>
+          <Property Name="Id_docente" Type="int" Nullable="false" />
+          <Property Name="Id_curso" Type="int" Nullable="false" />
+          <Property Name="Semestre" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__DocentexC__Id_cu__49C3F6B7">
+          <End Role="Curso" Type="Self.Curso" Multiplicity="1" />
+          <End Role="DocentexCurso" Type="Self.DocentexCurso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curso">
+              <PropertyRef Name="Id_curso" />
+            </Principal>
+            <Dependent Role="DocentexCurso">
+              <PropertyRef Name="Id_curso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DocentexC__Id_do__48CFD27E">
+          <End Role="Docente" Type="Self.Docente" Multiplicity="1" />
+          <End Role="DocentexCurso" Type="Self.DocentexCurso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Docente">
+              <PropertyRef Name="Id_docente" />
+            </Principal>
+            <Dependent Role="DocentexCurso">
+              <PropertyRef Name="Id_docente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelEFStoreContainer">
+          <EntitySet Name="Curso" EntityType="Self.Curso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Docente" EntityType="Self.Docente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DocentexCurso" EntityType="Self.DocentexCurso" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__DocentexC__Id_cu__49C3F6B7" Association="Self.FK__DocentexC__Id_cu__49C3F6B7">
+            <End Role="Curso" EntitySet="Curso" />
+            <End Role="DocentexCurso" EntitySet="DocentexCurso" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DocentexC__Id_do__48CFD27E" Association="Self.FK__DocentexC__Id_do__48CFD27E">
+            <End Role="Docente" EntitySet="Docente" />
+            <End Role="DocentexCurso" EntitySet="DocentexCurso" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ModelEF" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BDEFEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Curso" EntityType="ModelEF.Curso" />
+          <EntitySet Name="Docente" EntityType="ModelEF.Docente" />
+          <EntitySet Name="DocentexCurso" EntityType="ModelEF.DocentexCurso" />
+          <AssociationSet Name="FK__DocentexC__Id_cu__49C3F6B7" Association="ModelEF.FK__DocentexC__Id_cu__49C3F6B7">
+            <End Role="Curso" EntitySet="Curso" />
+            <End Role="DocentexCurso" EntitySet="DocentexCurso" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DocentexC__Id_do__48CFD27E" Association="ModelEF.FK__DocentexC__Id_do__48CFD27E">
+            <End Role="Docente" EntitySet="Docente" />
+            <End Role="DocentexCurso" EntitySet="DocentexCurso" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Curso">
+          <Key>
+            <PropertyRef Name="Id_curso" />
+          </Key>
+          <Property Name="Id_curso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombrecurso" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DocentexCurso" Relationship="ModelEF.FK__DocentexC__Id_cu__49C3F6B7" FromRole="Curso" ToRole="DocentexCurso" />
+        </EntityType>
+        <EntityType Name="Docente">
+          <Key>
+            <PropertyRef Name="Id_docente" />
+          </Key>
+          <Property Name="Id_docente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Apellido" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Escuela" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DocentexCurso" Relationship="ModelEF.FK__DocentexC__Id_do__48CFD27E" FromRole="Docente" ToRole="DocentexCurso" />
+        </EntityType>
+        <EntityType Name="DocentexCurso">
+          <Key>
+            <PropertyRef Name="Id_docente" />
+            <PropertyRef Name="Id_curso" />
+          </Key>
+          <Property Name="Id_docente" Type="Int32" Nullable="false" />
+          <Property Name="Id_curso" Type="Int32" Nullable="false" />
+          <Property Name="Semestre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Curso" Relationship="ModelEF.FK__DocentexC__Id_cu__49C3F6B7" FromRole="DocentexCurso" ToRole="Curso" />
+          <NavigationProperty Name="Docente" Relationship="ModelEF.FK__DocentexC__Id_do__48CFD27E" FromRole="DocentexCurso" ToRole="Docente" />
+        </EntityType>
+        <Association Name="FK__DocentexC__Id_cu__49C3F6B7">
+          <End Type="ModelEF.Curso" Role="Curso" Multiplicity="1" />
+          <End Type="ModelEF.DocentexCurso" Role="DocentexCurso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curso">
+              <PropertyRef Name="Id_curso" />
+            </Principal>
+            <Dependent Role="DocentexCurso">
+              <PropertyRef Name="Id_curso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DocentexC__Id_do__48CFD27E">
+          <End Type="ModelEF.Docente" Role="Docente" Multiplicity="1" />
+          <End Type="ModelEF.DocentexCurso" Role="DocentexCurso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Docente">
+              <PropertyRef Name="Id_docente" />
+            </Principal>
+            <Dependent Role="DocentexCurso">
+              <PropertyRef Name="Id_docente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelEFStoreContainer" CdmEntityContainer="BDEFEntities">
+          <EntitySetMapping Name="Curso">
+            <EntityTypeMapping TypeName="ModelEF.Curso">
+              <MappingFragment StoreEntitySet="Curso">
+                <ScalarProperty Name="Nombrecurso" ColumnName="Nombrecurso" />
+                <ScalarProperty Name="Id_curso" ColumnName="Id_curso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Docente">
+            <EntityTypeMapping TypeName="ModelEF.Docente">
+              <MappingFragment StoreEntitySet="Docente">
+                <ScalarProperty Name="Escuela" ColumnName="Escuela" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id_docente" ColumnName="Id_docente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocentexCurso">
+            <EntityTypeMapping TypeName="ModelEF.DocentexCurso">
+              <MappingFragment StoreEntitySet="DocentexCurso">
+                <ScalarProperty Name="Semestre" ColumnName="Semestre" />
+                <ScalarProperty Name="Id_curso" ColumnName="Id_curso" />
+                <ScalarProperty Name="Id_docente" ColumnName="Id_docente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

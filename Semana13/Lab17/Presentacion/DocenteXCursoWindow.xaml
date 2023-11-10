@@ -1,0 +1,29 @@
+﻿<Window x:Class="Presentacion.DocenteXCursoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Presentacion"
+        mc:Ignorable="d"
+        Title="DocenteXCursoWindow" Height="450" Width="800">
+    <Grid>
+        <ComboBox x:Name="cbDocente" HorizontalAlignment="Left" Margin="87,25,0,0" VerticalAlignment="Top" Width="196"/>
+        <ComboBox x:Name="cbCurso" HorizontalAlignment="Left" Margin="87,52,0,0" VerticalAlignment="Top" Width="196"/>
+        <TextBox x:Name="tbSemestre" HorizontalAlignment="Left" Margin="87,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196"/>
+        <Label Content="Docente:" HorizontalAlignment="Left" Margin="25,23,0,0" VerticalAlignment="Top"/>
+        <Label Content="Curso:" HorizontalAlignment="Left" Margin="39,50,0,0" VerticalAlignment="Top"/>
+        <Label Content="Semestre:" HorizontalAlignment="Left" Margin="21,75,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnAsignar" Content="Asignar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Margin="114,151,0,0" Click="btnAsignar_Click"/>
+        <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Margin="114,176,0,0" Click="btnSalir_Click"/>
+        <DataGrid x:Name="dgLista" Margin="339,19,22,20" RenderTransformOrigin="0.5,0.5">
+            <DataGrid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.509"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="1.991"/>
+                </TransformGroup>
+            </DataGrid.RenderTransform>
+        </DataGrid>
+    </Grid>
+</Window>
