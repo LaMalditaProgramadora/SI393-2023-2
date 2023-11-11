@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class DDocente
+    public  class DDocente
     {
-        public DDocente() { }
-
         public String Registrar(Docente docente)
         {
             try
@@ -45,7 +45,7 @@ namespace Datos
             }
         }
 
-        public String Elimnar(int id)
+        public String Eliminar(int id)
         {
             try
             {
@@ -87,7 +87,7 @@ namespace Datos
             {
                 using (var context = new BDEFEntities())
                 {
-                    docentes = context.Docente.Where(d => d.Escuela.Equals(escuela)).ToList();
+                    docentes = context.Docente.Where(d => d.Escuela.Contains(escuela)).ToList();
                 }
                 return docentes;
             }

@@ -2,7 +2,17 @@
 using Negocio;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
 namespace Presentacion
 {
@@ -12,43 +22,43 @@ namespace Presentacion
     public partial class DocenteXCursoWindow : Window
     {
         private NDocenteXCurso nDocenteXCurso = new NDocenteXCurso();
-        private NDocente nDocente = new NDocente();
         private NCurso nCurso = new NCurso();
+        private NDocente nDocente = new NDocente();
 
         public DocenteXCursoWindow()
         {
             InitializeComponent();
-            MostrarCursos(nCurso.ListarTodo());
             MostrarDocentes(nDocente.ListarTodo());
+            MostrarCursos(nCurso.ListarTodo());
             MostrarDocenteXCursos(nDocenteXCurso.ListarTodo());
-        }
-
-        private void MostrarDocentes(List<Docente> docentes)
-        {
-            cbDocente.ItemsSource = new List<Docente>();
-            cbDocente.ItemsSource = docentes;
-            cbDocente.DisplayMemberPath = "Nombre";
-            cbDocente.SelectedValuePath = "Id_docente";
-        }
-
-        private void MostrarCursos(List<Curso> cursos)
-        {
-            cbCurso.ItemsSource = new List<Curso>();
-            cbCurso.ItemsSource = cursos;
-            cbCurso.DisplayMemberPath = "Nombrecurso";
-            cbCurso.SelectedValuePath = "Id_curso";
         }
 
         private void MostrarDocenteXCursos(List<DocentexCurso> docenteXCursos)
         {
-            dgLista.ItemsSource = new List<DocentexCurso>();
-            dgLista.ItemsSource = docenteXCursos;
+            dgDocenteXCursos.ItemsSource = new List<DocentexCurso>();
+            dgDocenteXCursos.ItemsSource = docenteXCursos;
+        }
+
+        private void MostrarDocentes(List<Docente> docentes)
+        {
+            cbDocentes.ItemsSource = new List<Docente>();
+            cbDocentes.ItemsSource = docentes;
+            cbDocentes.DisplayMemberPath = "Nombre";
+            cbDocentes.SelectedValuePath = "Id_docente";
+        }
+
+        private void MostrarCursos(List<Curso> cursos)
+        {
+            cbCursos.ItemsSource = new List<Curso>();
+            cbCursos.ItemsSource = cursos;
+            cbCursos.DisplayMemberPath = "Nombrecurso";
+            cbCursos.SelectedValuePath = "Id_curso";
         }
 
         private void btnAsignar_Click(object sender, RoutedEventArgs e)
         {
             // Validación de campos
-            if (cbCurso.Text == "" || cbDocente.Text == "" || tbSemestre.Text == "")
+            if (cbCursos.Text == "" || cbDocentes.Text == "" || tbSemestre.Text == "")
             {
                 MessageBox.Show("Ingrese todos los campos");
                 return;
@@ -57,8 +67,8 @@ namespace Presentacion
             // Creación del objeto
             DocentexCurso docenteXCurso = new DocentexCurso
             {
-                Id_docente = (int)cbDocente.SelectedValue,
-                Id_curso = (int)cbCurso.SelectedValue,
+                Id_docente = (int)cbDocentes.SelectedValue,
+                Id_curso = (int)cbCursos.SelectedValue,
                 Semestre = tbSemestre.Text
             };
 

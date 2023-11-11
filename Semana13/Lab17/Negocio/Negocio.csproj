@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{467B3D6A-6B85-4849-8176-FA913ED21A4C}</ProjectGuid>
+    <ProjectGuid>{264D5A36-7F4D-4346-AE9B-6744965A7EBC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Negocio</RootNamespace>
@@ -41,14 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NDocenteXCurso.cs" />
     <Compile Include="NCurso.cs" />
     <Compile Include="NDocente.cs" />
+    <Compile Include="NDocenteXCurso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">
-      <Project>{816ffd5b-b45d-4b72-b96a-aafc550d214a}</Project>
+      <Project>{af4c3a0b-16a2-4724-b569-80da8d79b7c9}</Project>
       <Name>Datos</Name>
     </ProjectReference>
   </ItemGroup>

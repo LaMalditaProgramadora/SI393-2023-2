@@ -17,7 +17,7 @@ namespace Datos
                     context.DocentexCurso.Add(docenteXCurso);
                     context.SaveChanges();
                 }
-                return "Agregado exitosamente";
+                return "Asignado exitosamente";
             }
             catch (Exception ex)
             {
@@ -27,18 +27,18 @@ namespace Datos
 
         public List<DocentexCurso> ListarTodo()
         {
-            List<DocentexCurso> docenteXCurso = new List<DocentexCurso>();
+            List<DocentexCurso> docenteXCursos = new List<DocentexCurso>();
             try
             {
                 using (var context = new BDEFEntities())
                 {
-                    docenteXCurso = context.DocentexCurso.ToList();
+                    docenteXCursos = context.DocentexCurso.ToList();
                 }
-                return docenteXCurso;
+                return docenteXCursos;
             }
             catch (Exception ex)
             {
-                return docenteXCurso;
+                return docenteXCursos;
             }
         }
     }

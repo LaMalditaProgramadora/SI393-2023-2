@@ -2,8 +2,17 @@
 using Negocio;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
 namespace Presentacion
 {
@@ -13,7 +22,7 @@ namespace Presentacion
     public partial class DocenteWindow : Window
     {
         private NDocente nDocente = new NDocente();
-        private Docente docenteSeleccionado = null;
+        Docente docenteSeleccionado = null;
 
         public DocenteWindow()
         {
@@ -61,6 +70,13 @@ namespace Presentacion
                 return;
             }
 
+            // Validación de selección
+            if (docenteSeleccionado == null)
+            {
+                MessageBox.Show("Seleccione un docente");
+                return;
+            }
+
             // Creación del objeto
             Docente docente = new Docente
             {
@@ -70,7 +86,7 @@ namespace Presentacion
                 Escuela = tbEscuela.Text
             };
 
-            // Modificar el objeto
+            // Registrar el objeto
             String mensaje = nDocente.Modificar(docente);
             MessageBox.Show(mensaje);
 
@@ -80,6 +96,7 @@ namespace Presentacion
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
+
             // Validación de selección
             if (docenteSeleccionado == null)
             {
@@ -88,7 +105,7 @@ namespace Presentacion
             }
 
             // Eliminar
-            String mensaje = nDocente.Elimnar(docenteSeleccionado.Id_docente);
+            String mensaje = nDocente.Eliminar(docenteSeleccionado.Id_docente);
             MessageBox.Show(mensaje);
 
             // Mostrar en el DataGrid
@@ -103,6 +120,7 @@ namespace Presentacion
                 MessageBox.Show("Ingrese escuela");
                 return;
             }
+
             // Mostrar en el DataGrid
             MostrarDocentes(nDocente.ListarTodoPorEscuela(tbEscuela.Text));
         }

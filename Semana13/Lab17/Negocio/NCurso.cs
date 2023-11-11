@@ -1,13 +1,15 @@
 ﻿using Datos;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Negocio
 {
     public class NCurso
     {
         private DCurso dCurso = new DCurso();
-        public NCurso() { }
 
         public String Registrar(Curso curso)
         {
@@ -19,9 +21,9 @@ namespace Negocio
             return dCurso.Modificar(curso);
         }
 
-        public String Elimnar(int id)
+        public String Eliminar(int id)
         {
-            return dCurso.Elimnar(id);
+            return dCurso.Eliminar(id);
         }
 
         public List<Curso> ListarTodo()

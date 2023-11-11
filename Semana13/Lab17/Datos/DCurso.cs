@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class DCurso
+    public  class DCurso
     {
-        public DCurso() { }
-
         public String Registrar(Curso curso)
         {
             try
@@ -43,7 +43,7 @@ namespace Datos
             }
         }
 
-        public String Elimnar(int id)
+        public String Eliminar(int id)
         {
             try
             {
@@ -77,5 +77,6 @@ namespace Datos
                 return cursos;
             }
         }
+
     }
 }

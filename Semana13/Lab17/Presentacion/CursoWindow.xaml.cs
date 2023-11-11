@@ -22,7 +22,7 @@ namespace Presentacion
     public partial class CursoWindow : Window
     {
         private NCurso nCurso = new NCurso();
-        private Curso cursoSeleccionado = null;
+        Curso cursoSeleccionado = null;
 
         public CursoWindow()
         {
@@ -39,7 +39,7 @@ namespace Presentacion
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
             // Validación de campos
-            if (tbNombreCurso.Text == "")
+            if (tbNombre.Text == "")
             {
                 MessageBox.Show("Ingrese todos los campos");
                 return;
@@ -48,7 +48,7 @@ namespace Presentacion
             // Creación del objeto
             Curso curso = new Curso
             {
-                Nombrecurso = tbNombreCurso.Text
+                Nombrecurso = tbNombre.Text
             };
 
             // Registrar el objeto
@@ -62,7 +62,7 @@ namespace Presentacion
         private void btnModificar_Click(object sender, RoutedEventArgs e)
         {
             // Validación de campos
-            if (tbNombreCurso.Text == "")
+            if (tbNombre.Text == "")
             {
                 MessageBox.Show("Ingrese todos los campos");
                 return;
@@ -79,10 +79,10 @@ namespace Presentacion
             Curso curso = new Curso
             {
                 Id_curso = cursoSeleccionado.Id_curso,
-                Nombrecurso = tbNombreCurso.Text
+                Nombrecurso = tbNombre.Text
             };
 
-            // Modificar el objeto
+            // Registrar el objeto
             String mensaje = nCurso.Modificar(curso);
             MessageBox.Show(mensaje);
 
@@ -92,6 +92,7 @@ namespace Presentacion
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
+
             // Validación de selección
             if (cursoSeleccionado == null)
             {
@@ -100,7 +101,7 @@ namespace Presentacion
             }
 
             // Eliminar
-            String mensaje = nCurso.Elimnar(cursoSeleccionado.Id_curso);
+            String mensaje = nCurso.Eliminar(cursoSeleccionado.Id_curso);
             MessageBox.Show(mensaje);
 
             // Mostrar en el DataGrid

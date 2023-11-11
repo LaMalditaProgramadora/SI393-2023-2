@@ -7,15 +7,13 @@
         mc:Ignorable="d"
         Title="DocenteXCursoWindow" Height="450" Width="800">
     <Grid>
-        <ComboBox x:Name="cbDocente" HorizontalAlignment="Left" Margin="87,25,0,0" VerticalAlignment="Top" Width="196"/>
-        <ComboBox x:Name="cbCurso" HorizontalAlignment="Left" Margin="87,52,0,0" VerticalAlignment="Top" Width="196"/>
-        <TextBox x:Name="tbSemestre" HorizontalAlignment="Left" Margin="87,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196"/>
-        <Label Content="Docente:" HorizontalAlignment="Left" Margin="25,23,0,0" VerticalAlignment="Top"/>
-        <Label Content="Curso:" HorizontalAlignment="Left" Margin="39,50,0,0" VerticalAlignment="Top"/>
-        <Label Content="Semestre:" HorizontalAlignment="Left" Margin="21,75,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnAsignar" Content="Asignar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Margin="114,151,0,0" Click="btnAsignar_Click"/>
-        <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Margin="114,176,0,0" Click="btnSalir_Click"/>
-        <DataGrid x:Name="dgLista" Margin="339,19,22,20" RenderTransformOrigin="0.5,0.5">
+        <Label Content="Docente:" HorizontalAlignment="Left" Margin="18,14,0,0" VerticalAlignment="Top"/>
+        <Label Content="Curso:" HorizontalAlignment="Left" Margin="32,40,0,0" VerticalAlignment="Top"/>
+        <Label Content="Semestre:" HorizontalAlignment="Left" Margin="14,65,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbSemestre" HorizontalAlignment="Left" Margin="80,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188"/>
+        <Button x:Name="btnAsignar" Content="Asignar" HorizontalAlignment="Left" Margin="74,154,0,0" VerticalAlignment="Top" Width="171" Click="btnAsignar_Click"/>
+        <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Margin="74,179,0,0" VerticalAlignment="Top" Width="170" Click="btnSalir_Click"/>
+        <DataGrid x:Name="dgDocenteXCursos" Margin="339,19,22,20" RenderTransformOrigin="0.5,0.5">
             <DataGrid.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -25,5 +23,7 @@
                 </TransformGroup>
             </DataGrid.RenderTransform>
         </DataGrid>
+        <ComboBox x:Name="cbDocentes" HorizontalAlignment="Left" Margin="80,16,0,0" VerticalAlignment="Top" Width="188"/>
+        <ComboBox x:Name="cbCursos" HorizontalAlignment="Left" Margin="80,43,0,0" VerticalAlignment="Top" Width="188"/>
     </Grid>
 </Window>
