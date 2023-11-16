@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{94CD4860-0EF1-43A7-8B28-C08ADA0DEA8F}</ProjectGuid>
+    <ProjectGuid>{1BC8A5D4-C01F-40BE-A20F-A6AE93F358FB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Datos</RootNamespace>
@@ -50,10 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DDesarrollador.cs" />
     <Compile Include="Desarrollador.cs">
       <DependentUpon>ModelEF.tt</DependentUpon>
     </Compile>
-    <Compile Include="DDesarrollador.cs" />
     <Compile Include="DVideojuego.cs" />
     <Compile Include="ModelEF.Context.cs">
       <AutoGen>True</AutoGen>

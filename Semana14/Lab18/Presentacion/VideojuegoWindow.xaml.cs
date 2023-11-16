@@ -2,8 +2,17 @@
 using Negocio;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
 namespace Presentacion
 {
@@ -14,13 +23,13 @@ namespace Presentacion
     {
         private NVideojuego nVideojuego = new NVideojuego();
         private NDesarrollador nDesarrollador = new NDesarrollador();
-        private Videojuego videojuegoSeleccionado = null;
+        private Videojuego videojuegoSeleccionado = new Videojuego();
 
         public VideojuegoWindow()
         {
             InitializeComponent();
-            MostrarVideojuegos(nVideojuego.ListarTodo());
             MostrarDesarrolladores(nDesarrollador.ListarTodo());
+            MostrarVideojuegos(nVideojuego.ListarTodo());
         }
 
         private void MostrarVideojuegos(List<Videojuego> videojuegos)
@@ -97,7 +106,6 @@ namespace Presentacion
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
-
             // Validación de selección
             if (videojuegoSeleccionado == null)
             {

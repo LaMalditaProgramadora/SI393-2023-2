@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8A059A0D-4DC2-4DFF-867C-D6C99DB6699D}</ProjectGuid>
+    <ProjectGuid>{C8BF1E2F-8A1B-4168-9CF3-0E5A2155BCD4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Presentacion</RootNamespace>
     <AssemblyName>Presentacion</AssemblyName>
@@ -118,11 +118,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">
-      <Project>{94cd4860-0ef1-43a7-8b28-c08ada0dea8f}</Project>
+      <Project>{1bc8a5d4-c01f-40be-a20f-a6ae93f358fb}</Project>
       <Name>Datos</Name>
     </ProjectReference>
     <ProjectReference Include="..\Negocio\Negocio.csproj">
-      <Project>{4da74cd2-d8e5-40c3-9890-907fd88bde22}</Project>
+      <Project>{cd750cac-d087-48db-89fd-1a225ad49a45}</Project>
       <Name>Negocio</Name>
     </ProjectReference>
   </ItemGroup>

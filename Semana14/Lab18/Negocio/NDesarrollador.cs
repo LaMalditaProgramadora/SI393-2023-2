@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Negocio
 {
-    public class NDesarrollador
+    public  class NDesarrollador
     {
         private DDesarrollador dDesarrollador = new DDesarrollador();
 

@@ -23,8 +23,8 @@
         <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Left" Margin="74,179,0,0" VerticalAlignment="Top" Width="170" Click="btnModificar_Click"/>
         <Button x:Name="btnEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="74,204,0,0" VerticalAlignment="Top" Width="170" Click="btnEliminar_Click"/>
         <Button x:Name="btnListarPorValoracion" Content="Listar por Valoración" HorizontalAlignment="Left" Margin="74,229,0,0" VerticalAlignment="Top" Width="170" Click="btnListarPorValoracion_Click"/>
-        <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Margin="74,254,0,0" VerticalAlignment="Top" Width="170" Click="btnSalir_Click"/>
-        <DataGrid x:Name="dgVideojuegos" Margin="339,19,22,20" RenderTransformOrigin="0.5,0.5" SelectionChanged="dgVideojuegos_SelectionChanged" >
+        <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Margin="74,254,0,0" VerticalAlignment="Top" Width="170" Click="btnSalir_Click" />
+        <DataGrid x:Name="dgVideojuegos" Margin="339,19,22,20" RenderTransformOrigin="0.5,0.5" SelectionChanged="dgVideojuegos_SelectionChanged">
             <DataGrid.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

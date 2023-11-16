@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4DA74CD2-D8E5-40C3-9890-907FD88BDE22}</ProjectGuid>
+    <ProjectGuid>{CD750CAC-D087-48DB-89FD-1A225AD49A45}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Negocio</RootNamespace>
@@ -41,13 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NVideojuego.cs" />
     <Compile Include="NDesarrollador.cs" />
+    <Compile Include="NVideojuego.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">
-      <Project>{94cd4860-0ef1-43a7-8b28-c08ada0dea8f}</Project>
+      <Project>{1bc8a5d4-c01f-40be-a20f-a6ae93f358fb}</Project>
       <Name>Datos</Name>
     </ProjectReference>
   </ItemGroup>

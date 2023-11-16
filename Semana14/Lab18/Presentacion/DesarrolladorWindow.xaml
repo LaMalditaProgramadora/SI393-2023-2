@@ -10,9 +10,9 @@
         <Label Content="Nombre:" HorizontalAlignment="Left" Margin="18,14,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Margin="78,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
         <Button x:Name="btnRegistrar" Content="Registrar" HorizontalAlignment="Left" Margin="74,154,0,0" VerticalAlignment="Top" Width="171" Click="btnRegistrar_Click"/>
-        <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Left" Margin="74,179,0,0" VerticalAlignment="Top" Width="170" Click="btnModificar_Click"/>
-        <Button x:Name="btnEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="74,204,0,0" VerticalAlignment="Top" Width="170" Click="btnEliminar_Click"/>
-        <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Margin="74,229,0,0" VerticalAlignment="Top" Width="170" Click="btnSalir_Click"/>
+        <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Left" Margin="74,179,0,0" VerticalAlignment="Top" Width="170" Click="btnModificar_Click" />
+        <Button x:Name="btnEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="74,204,0,0" VerticalAlignment="Top" Width="170" Click="btnEliminar_Click" />
+        <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Margin="74,229,0,0" VerticalAlignment="Top" Width="170" Click="btnSalir_Click" />
         <DataGrid x:Name="dgDesarrolladores" Margin="339,19,22,20" RenderTransformOrigin="0.5,0.5" SelectionChanged="dgDesarrolladores_SelectionChanged" >
             <DataGrid.RenderTransform>
                 <TransformGroup>

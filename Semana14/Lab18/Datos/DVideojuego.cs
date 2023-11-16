@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class DVideojuego
+    public  class DVideojuego
     {
         public String Registrar(Videojuego videojuego)
         {

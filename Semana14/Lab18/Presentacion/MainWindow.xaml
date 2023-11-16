@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button x:Name="btnVerDesarrolladores" Content="Ver Desarrolladores" HorizontalAlignment="Center" Margin="0,87,0,0" VerticalAlignment="Top" Width="149" Click="btnVerDesarrolladores_Click"/>
-        <Button x:Name="btnVerDocentes" Content="Ver Videojuegos" HorizontalAlignment="Center" Margin="0,112,0,0" VerticalAlignment="Top" Width="149" Click="btnVerVideojuegos_Click"/>
+        <Button x:Name="btnVerVideojuegos" Content="Ver Videojuegos" HorizontalAlignment="Center" Margin="0,112,0,0" VerticalAlignment="Top" Width="149" Click="btnVerVideojuegos_Click"/>
         <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Center" Margin="0,162,0,0" VerticalAlignment="Top" Width="149" Click="btnSalir_Click"/>
     </Grid>
 </Window>

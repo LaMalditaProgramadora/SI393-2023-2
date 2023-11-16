@@ -27,13 +27,13 @@ namespace Presentacion
         public DesarrolladorWindow()
         {
             InitializeComponent();
-            MostrarDesarrolladors(nDesarrollador.ListarTodo());
+            MostrarDesarrolladores(nDesarrollador.ListarTodo());
         }
 
-        private void MostrarDesarrolladors(List<Desarrollador> desarrolladors)
+        private void MostrarDesarrolladores(List<Desarrollador> desarrolladores)
         {
             dgDesarrolladores.ItemsSource = new List<Desarrollador>();
-            dgDesarrolladores.ItemsSource = desarrolladors;
+            dgDesarrolladores.ItemsSource = desarrolladores;
         }
 
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
@@ -56,7 +56,7 @@ namespace Presentacion
             MessageBox.Show(mensaje);
 
             // Mostrar en el DataGrid
-            MostrarDesarrolladors(nDesarrollador.ListarTodo());
+            MostrarDesarrolladores(nDesarrollador.ListarTodo());
         }
 
         private void btnModificar_Click(object sender, RoutedEventArgs e)
@@ -87,12 +87,11 @@ namespace Presentacion
             MessageBox.Show(mensaje);
 
             // Mostrar en el DataGrid
-            MostrarDesarrolladors(nDesarrollador.ListarTodo());
+            MostrarDesarrolladores(nDesarrollador.ListarTodo());
         }
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
-
             // Validación de selección
             if (desarrolladorSeleccionado == null)
             {
@@ -105,7 +104,7 @@ namespace Presentacion
             MessageBox.Show(mensaje);
 
             // Mostrar en el DataGrid
-            MostrarDesarrolladors(nDesarrollador.ListarTodo());
+            MostrarDesarrolladores(nDesarrollador.ListarTodo());
         }
 
         private void btnSalir_Click(object sender, RoutedEventArgs e)

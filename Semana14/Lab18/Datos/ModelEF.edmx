@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ModelEF.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ModelEF.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Desarrollador">
           <Key>
             <PropertyRef Name="Id_Desarrollador" />
@@ -41,32 +41,39 @@
             <End Role="Videojuego" EntitySet="Videojuego" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ModelEF" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BDEFEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Desarrollador" EntityType="ModelEF.Desarrollador" />
+          <EntitySet Name="Videojuego" EntityType="ModelEF.Videojuego" />
+          <AssociationSet Name="FK__Videojueg__Id_De__3D5E1FD2" Association="ModelEF.FK__Videojueg__Id_De__3D5E1FD2">
+            <End Role="Desarrollador" EntitySet="Desarrollador" />
+            <End Role="Videojuego" EntitySet="Videojuego" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="Desarrollador">
           <Key>
             <PropertyRef Name="Id_Desarrollador" />
           </Key>
           <Property Name="Id_Desarrollador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Videojuego" Relationship="Self.FK__Videojueg__Id_De__3D5E1FD2" FromRole="Desarrollador" ToRole="Videojuego" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Videojuego" Relationship="ModelEF.FK__Videojueg__Id_De__3D5E1FD2" FromRole="Desarrollador" ToRole="Videojuego" />
         </EntityType>
         <EntityType Name="Videojuego">
           <Key>
             <PropertyRef Name="Id_Videojuego" />
           </Key>
           <Property Name="Id_Videojuego" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Titulo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Titulo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Valoracion" Type="Int32" Nullable="false" />
           <Property Name="Id_Desarrollador" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Desarrollador" Relationship="Self.FK__Videojueg__Id_De__3D5E1FD2" FromRole="Videojuego" ToRole="Desarrollador" />
+          <NavigationProperty Name="Desarrollador" Relationship="ModelEF.FK__Videojueg__Id_De__3D5E1FD2" FromRole="Videojuego" ToRole="Desarrollador" />
         </EntityType>
         <Association Name="FK__Videojueg__Id_De__3D5E1FD2">
-          <End Role="Desarrollador" Type="Self.Desarrollador" Multiplicity="1" />
-          <End Role="Videojuego" Type="Self.Videojuego" Multiplicity="*" />
+          <End Type="ModelEF.Desarrollador" Role="Desarrollador" Multiplicity="1" />
+          <End Type="ModelEF.Videojuego" Role="Videojuego" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Desarrollador">
               <PropertyRef Name="Id_Desarrollador" />
@@ -76,14 +83,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BDEFEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Desarrollador" EntityType="Self.Desarrollador" />
-          <EntitySet Name="Videojuego" EntityType="Self.Videojuego" />
-          <AssociationSet Name="FK__Videojueg__Id_De__3D5E1FD2" Association="Self.FK__Videojueg__Id_De__3D5E1FD2">
-            <End Role="Desarrollador" EntitySet="Desarrollador" />
-            <End Role="Videojuego" EntitySet="Videojuego" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -93,18 +92,18 @@
           <EntitySetMapping Name="Desarrollador">
             <EntityTypeMapping TypeName="ModelEF.Desarrollador">
               <MappingFragment StoreEntitySet="Desarrollador">
-                <ScalarProperty Name="Id_Desarrollador" ColumnName="Id_Desarrollador" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id_Desarrollador" ColumnName="Id_Desarrollador" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Videojuego">
             <EntityTypeMapping TypeName="ModelEF.Videojuego">
               <MappingFragment StoreEntitySet="Videojuego">
-                <ScalarProperty Name="Id_Videojuego" ColumnName="Id_Videojuego" />
-                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
-                <ScalarProperty Name="Valoracion" ColumnName="Valoracion" />
                 <ScalarProperty Name="Id_Desarrollador" ColumnName="Id_Desarrollador" />
+                <ScalarProperty Name="Valoracion" ColumnName="Valoracion" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="Id_Videojuego" ColumnName="Id_Videojuego" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
