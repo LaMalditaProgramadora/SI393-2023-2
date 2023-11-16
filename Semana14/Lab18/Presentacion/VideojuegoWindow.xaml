@@ -1,0 +1,38 @@
+﻿<Window x:Class="Presentacion.VideojuegoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Presentacion"
+        mc:Ignorable="d"
+        Title="VideojuegoWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Título:" HorizontalAlignment="Left" Margin="55,17,0,0" VerticalAlignment="Top"/>
+        <Label Content="Valoración:" HorizontalAlignment="Left" Margin="30,42,0,0" VerticalAlignment="Top"/>
+        <Label Content="Desarrollador:" HorizontalAlignment="Left" Margin="14,69,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbValoracion" HorizontalAlignment="Left" Margin="103,44,0,0" VerticalAlignment="Top" Width="190">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+            <ComboBoxItem Content="5"/>
+        </ComboBox>
+        <ComboBox x:Name="cbDesarrollador" HorizontalAlignment="Left" Margin="103,71,0,0" VerticalAlignment="Top" Width="190"/>
+        <TextBox x:Name="tbTitulo" HorizontalAlignment="Left" Margin="103,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <Button x:Name="btnRegistrar" Content="Registrar" HorizontalAlignment="Left" Margin="74,154,0,0" VerticalAlignment="Top" Width="171" Click="btnRegistrar_Click"/>
+        <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Left" Margin="74,179,0,0" VerticalAlignment="Top" Width="170" Click="btnModificar_Click"/>
+        <Button x:Name="btnEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="74,204,0,0" VerticalAlignment="Top" Width="170" Click="btnEliminar_Click"/>
+        <Button x:Name="btnListarPorValoracion" Content="Listar por Valoración" HorizontalAlignment="Left" Margin="74,229,0,0" VerticalAlignment="Top" Width="170" Click="btnListarPorValoracion_Click"/>
+        <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Margin="74,254,0,0" VerticalAlignment="Top" Width="170" Click="btnSalir_Click"/>
+        <DataGrid x:Name="dgVideojuegos" Margin="339,19,22,20" RenderTransformOrigin="0.5,0.5" SelectionChanged="dgVideojuegos_SelectionChanged" >
+            <DataGrid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.509"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="1.991"/>
+                </TransformGroup>
+            </DataGrid.RenderTransform>
+        </DataGrid>
+    </Grid>
+</Window>
